@@ -41,7 +41,7 @@ export default function Logo({
     size === "sm"
       ? "h-7 sm:h-8"
       : size === "lg"
-      ? "h-10 sm:h-12 md:h-14"
+      ? "h-11 sm:h-13 md:h-15"
       : "h-8 sm:h-9 md:h-10";
 
   return (

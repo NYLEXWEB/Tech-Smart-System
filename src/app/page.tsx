@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Services from "@/components/Services";
 import SocialContent from "@/components/SocialContent";
+import GallerySection from "@/components/GallerySection";
 import FaqSectors from "@/components/FaqSectors";
 
 export default function Home() {
@@ -12,6 +13,7 @@ export default function Home() {
       <About />
       <Services />
       <SocialContent id="social" />
+      <GallerySection />
       <FaqSectors />
     </>
   );

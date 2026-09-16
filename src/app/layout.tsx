@@ -1,12 +1,21 @@
 import type { Metadata, Viewport } from "next";
-import { Plus_Jakarta_Sans } from "next/font/google";
+import { Inter, Caveat } from "next/font/google";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import "./globals.css";
 
-const plusJakartaSans = Plus_Jakarta_Sans({
+const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-sans",
+  variable: "--font-inter",
   display: "swap",
   weight: ["400", "500", "600", "700", "800"],
+});
+
+const caveat = Caveat({
+  subsets: ["latin"],
+  variable: "--font-caveat",
+  display: "swap",
+  weight: ["400", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -36,9 +45,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${plusJakartaSans.variable} font-sans`}>
-      <body className="bg-white text-brand-charcoal-900 antialiased selection:bg-brand-yellow selection:text-brand-charcoal-950 min-h-screen flex flex-col">
-        {children}
+    <html
+      lang="en"
+      className={`${inter.variable} ${caveat.variable} font-sans`}
+    >
+      <body className="bg-white text-[#4B5563] antialiased selection:bg-[#F59E0B] selection:text-[#111827] min-h-screen flex flex-col font-sans">
+        <Navbar />
+        <main className="flex-grow w-full max-w-full overflow-x-hidden">
+          {children}
+        </main>
+        <Footer />
       </body>
     </html>
   );

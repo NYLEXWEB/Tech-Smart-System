@@ -1,32 +1,44 @@
+"use client";
+
 import React from "react";
+import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function BottomCta() {
   return (
-    <section className="py-14 sm:py-20 bg-brand-yellow text-slate-950 w-full max-w-full overflow-hidden">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4 w-full">
-        {/* Main Heading matching reference */}
-        <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-slate-950 tracking-tight">
-          Schedule A Free Consultation
+    <section className="py-16 sm:py-20 bg-[#FFFDF5] border-t border-b border-amber-200 text-[#111827] w-full max-w-full overflow-hidden">
+      <motion.div
+        initial={{ opacity: 0, scale: 0.96 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true, margin: "-60px" }}
+        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+        className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center w-full"
+      >
+        <div className="eyebrow-badge mb-3 bg-white border-amber-200">
+          <span className="eyebrow-bullet" />
+          <span>Free Engineering Consultation</span>
+        </div>
+
+        <h2 className="text-[clamp(1.35rem,2.2vw,1.75rem)] font-semibold text-[#111827] tracking-[-0.02em] leading-[1.28] mb-2">
+          Ready to Secure Your Property?
         </h2>
 
-        {/* Supporting Subtitle */}
-        <p className="text-xs sm:text-sm text-slate-900/85 max-w-xl mx-auto leading-relaxed font-medium">
-          We craft dependable security systems that blend cutting-edge technology with enduring reliability, keeping your property connected, monitored and secure.
+        <p className="text-base font-normal text-[#4B5563] max-w-xl mx-auto leading-[1.65] mb-6">
+          We craft dependable security systems blending cutting-edge surveillance with enduring reliability across Kerala.
         </p>
 
-        {/* Black Pill CTA Button with arrow matching reference */}
-        <div className="pt-2 sm:pt-4 flex items-center justify-center">
-          <a
-            href="#contact"
-            className="inline-flex items-center justify-center space-x-3 px-7 py-3.5 sm:py-3 rounded-full bg-slate-950 text-white hover:bg-slate-900 active:scale-95 text-xs font-bold transition-all shadow-md hover:shadow-xl w-full sm:w-auto"
-          >
-            <span>Get Started</span>
-            <span className="w-5 h-5 rounded-full bg-brand-yellow text-slate-950 flex items-center justify-center text-[10px] font-bold">
-              →
-            </span>
-          </a>
+        <div className="flex items-center justify-center">
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center space-x-2.5 px-8 py-3.5 rounded-full bg-[#111827] text-white hover:bg-slate-800 text-xs sm:text-sm font-semibold tracking-wider uppercase transition-all shadow-sm group"
+            >
+              <span>Schedule A Site Visit</span>
+              <span className="transform group-hover:translate-x-1 transition-transform">→</span>
+            </Link>
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

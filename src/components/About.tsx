@@ -2,68 +2,99 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function About() {
   return (
     <section
       id="about"
-      className="relative py-20 sm:py-28 bg-white text-slate-900 border-t border-b border-slate-200/80 w-full max-w-full overflow-hidden"
+      className="relative py-16 sm:py-24 bg-slate-50/70 text-[#111827] border-t border-b border-slate-200/70 w-full max-w-full overflow-hidden"
     >
-      {/* Soft Ambient Warm Lighting */}
-      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-96 h-96 bg-brand-yellow/15 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute bottom-0 right-10 w-80 h-80 bg-slate-200/50 rounded-full blur-[120px] pointer-events-none" />
-
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 sm:gap-14 lg:gap-16 items-center">
           
-          {/* Left Column: Text Information & Content */}
-          <div className="lg:col-span-7 space-y-6 sm:space-y-8 text-left">
-            
-
-            {/* Premium Heading */}
-            <div className="space-y-2.5">
-              <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-slate-950 tracking-tight leading-tight">
-                About{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-slate-950 via-slate-800 to-amber-600">
-                  TechSmart Systems
-                </span>
-              </h2>
-              <div className="w-20 h-1.5 bg-brand-yellow rounded-full shadow-sm" />
+          {/* Left Column: Narrative & Values */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            className="lg:col-span-7 text-left"
+          >
+            <div className="eyebrow-badge mb-3">
+              <span className="eyebrow-bullet" />
+              <span>Who We Are</span>
             </div>
 
-            {/* Minimal & Clean Paragraph Content */}
-            <div className="space-y-4 text-sm sm:text-base md:text-lg text-slate-700 leading-relaxed font-normal">
-              <p className="bg-slate-50/90 p-5 sm:p-6 rounded-2xl border border-slate-200/80 shadow-sm shadow-slate-100">
-                Serving customers since <strong className="text-slate-950 font-bold">1999</strong>, TechSmart Systems, based in Kollam, Kerala, is a professional provider of CCTV surveillance, security systems, and home automation solutions. We specialize in sales, installation, configuration, maintenance, and service for homes, shops, offices, commercial buildings, and institutions.
-              </p>
-              <p className="px-2 text-slate-700">
-                With more than <strong className="text-slate-950 font-bold">25 years of hands-on industry experience</strong>, our focus is on reliable products, professional installation, practical security solutions, and dependable after-sales support.
+            {/* Heading 2 */}
+            <h2 className="text-[clamp(1.5rem,2.5vw,2.25rem)] font-bold text-[#111827] tracking-[-0.02em] leading-[1.28] mb-3 uppercase">
+              About <span className="text-[#F59E0B] relative inline-block">TechSmart Systems<span className="absolute -bottom-1 left-0 right-0 h-1 bg-[#F59E0B] rounded-full" /></span>
+            </h2>
+
+            {/* Narrative Cards */}
+            <div className="space-y-4 text-base font-normal text-[#4B5563] leading-[1.65]">
+              <motion.div
+                whileHover={{ y: -3, transition: { duration: 0.2 } }}
+                className="p-6 rounded-2xl bg-white border border-slate-200/80 shadow-sm space-y-3"
+              >
+                <p>
+                  Serving customers since <strong className="text-[#111827] font-semibold">1999</strong>, TechSmart Systems, based in Kollam, Kerala, is a professional provider of CCTV surveillance, security systems, and home automation solutions.
+                </p>
+                <p>
+                  We specialize in sales, installation, configuration, maintenance, and service for homes, shops, offices, commercial buildings, and institutions across Kerala.
+                </p>
+              </motion.div>
+
+              <p className="px-1 text-[#4B5563]">
+                With more than <strong className="text-[#111827] font-semibold">25 years of hands-on industry experience</strong>, our focus is on reliable products, precision installation, practical security solutions, and dependable after-sales support.
               </p>
             </div>
 
-           
+            <div className="pt-6">
+              <Link
+                href="/about"
+                className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.08em] text-[#111827] hover:text-[#F59E0B] transition-colors group"
+              >
+                <span>Read Full Company Story & Milestones</span>
+                <span className="transform group-hover:translate-x-1 transition-transform">→</span>
+              </Link>
+            </div>
+          </motion.div>
 
-          </div>
-
-          {/* Right Column: Architectural Security Display Card */}
-          <div className="lg:col-span-5 pt-4 lg:pt-0">
-            <div className="relative group rounded-3xl overflow-hidden shadow-2xl shadow-slate-300/60 border border-slate-200 bg-slate-950 p-2 hover:border-brand-yellow/60 transition-all duration-500">
-              <div className="relative aspect-[4/3] sm:aspect-[4/5] w-full rounded-2xl overflow-hidden">
+          {/* Right Column: Hardware Image Showcase */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+            className="lg:col-span-5 pt-4 lg:pt-0"
+          >
+            <motion.div
+              whileHover={{ y: -4, transition: { duration: 0.25 } }}
+              className="relative rounded-2xl sm:rounded-3xl overflow-hidden bg-white p-2.5 sm:p-3 border border-slate-200 shadow-sm"
+            >
+              <div className="relative aspect-[4/3] sm:aspect-[4/5] w-full rounded-xl sm:rounded-2xl overflow-hidden bg-slate-100 group">
                 <Image
                   src="/images/about-security.jpg"
-                  alt="TechSmart Systems Next-Gen Security Control Panel and AI CCTV Hardware"
+                  alt="TechSmart Systems Next-Gen Security Hardware and Control Systems"
                   fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
                   sizes="(max-width: 1024px) 100vw, 500px"
                   quality={95}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent opacity-80" />
               </div>
 
-              {/* Minimalist Glass Bottom Footer Label */}
-             
-            </div>
-          </div>
+              <div className="p-3 sm:p-4 text-left">
+                <div className="text-xs font-semibold uppercase tracking-[0.08em] text-[#111827]">
+                  Precision Hardware & Security Panels
+                </div>
+                <div className="text-xs text-[#6B7280] mt-1 leading-normal">
+                  Professional grade CCTV, access control, and automation integration.
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
 
         </div>
       </div>

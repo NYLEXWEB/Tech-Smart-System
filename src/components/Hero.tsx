@@ -1,87 +1,106 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
+import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function Hero() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 24 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.7,
+        ease: "easeOut" as const,
+      },
+    },
+  };
+
   return (
-    <section className="relative min-h-screen flex flex-col justify-between overflow-hidden bg-white w-full max-w-full pt-28 sm:pt-36 pb-10 sm:pb-14 text-slate-950">
-      {/* Background Image: Mobile Portrait (9:16) */}
-      <div className="absolute inset-0 z-0 sm:hidden w-full h-full">
-        <Image
-          src="/images/hero-mobile.png"
-          alt="TechSmart Systems Next-Gen Security Camera and AI Automation Hub"
-          fill
-          priority
-          className="object-cover object-center"
-          quality={100}
-        />
-      </div>
+    <section className="relative min-h-[100dvh] md:min-h-screen flex items-start sm:items-center overflow-hidden bg-white w-full max-w-full pt-24 sm:pt-32 pb-12 sm:pb-20 text-[#111827]">
+      {/* Mobile View: Vertical Hero Background (Full Screen & Fixed) */}
+      <div
+        className="block md:hidden absolute inset-0 z-0 w-full h-full bg-cover bg-[center_top] bg-no-repeat bg-fixed pointer-events-none"
+        style={{
+          backgroundImage: "url('/images/hero-mobile.png')",
+        }}
+        aria-hidden="true"
+      />
 
-      {/* Background Image: Desktop Landscape (16:9) */}
-      <div className="absolute inset-0 z-0 hidden sm:block w-full h-full">
-        <Image
-          src="/images/hero-desktop.png"
-          alt="TechSmart Systems Premium AI CCTV Surveillance Hardware"
-          fill
-          priority
-          className="object-cover object-center"
-          quality={100}
-        />
-      </div>
+      {/* Desktop View: Landscape Hero Camera Background (Full Screen & Fixed) */}
+      <div
+        className="hidden md:block absolute inset-0 z-0 w-full h-full bg-cover bg-center bg-no-repeat bg-fixed pointer-events-none"
+        style={{
+          backgroundImage: "url('/images/hero-camera.png')",
+        }}
+        aria-hidden="true"
+      />
 
-      {/* Main Hero Content Area - Clean Single Column Layout */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full my-auto py-6 sm:py-12">
-        <div className="max-w-2xl sm:max-w-3xl space-y-6 sm:space-y-8 text-left">
-
-          {/* Main Headline - Clean Dark Charcoal & Rich Gold without text shadows */}
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black text-slate-950 tracking-tight leading-[1.08]">
+      {/* Main Hero Content Area */}
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full my-auto py-4 sm:py-16">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          className="max-w-[65%] xs:max-w-[68%] sm:max-w-[72%] md:max-w-2xl lg:max-w-3xl text-left"
+        >
+          {/* Headline (H1) - Slim & Elegant Apple Tech Aesthetic */}
+          <motion.h1
+            variants={itemVariants}
+            className="text-[2.35rem] xs:text-[2.75rem] sm:text-5xl md:text-6xl lg:text-7xl font-medium text-[#111827] tracking-[-0.02em] leading-[1.22] sm:leading-[1.18] mb-3.5 sm:mb-4"
+          >
             Think Smart.<br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 via-amber-600 to-yellow-600">
+            <span className="text-[#4B5563] font-normal">
               Stay Secure.
             </span>
-          </h1>
+          </motion.h1>
 
-          {/* Supporting Text - Crisp Readable Dark Slate */}
-          <p className="text-base sm:text-xl font-semibold text-slate-700 max-w-2xl leading-relaxed">
-            Next-generation CCTV surveillance, AI motion detection, and smart home automation engineered for residences, commercial spaces, and enterprises across Kerala.
-          </p>
+          {/* Supporting Body Text */}
+          <motion.p
+            variants={itemVariants}
+            className="text-xs xs:text-sm sm:text-base text-[#4B5563] font-normal leading-[1.55] sm:leading-[1.65] mb-5 sm:mb-7"
+          >
+            Next-generation CCTV surveillance, AI motion detection, and smart home automation engineered for residences, commercial spaces, and enterprises across Kerala since 1999.
+          </motion.p>
 
           {/* Action Buttons */}
-          <div className="pt-3 flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-6">
-            {/* Primary Yellow Button */}
-            <a
-              href="#contact"
-              className="inline-flex items-center justify-center px-8 py-4 text-xs sm:text-sm font-black uppercase tracking-wider text-slate-950 bg-brand-yellow hover:bg-brand-yellow-hover active:scale-[0.98] rounded-full shadow-lg hover:shadow-xl transition-all duration-300 gap-2.5 text-center group"
-            >
-              <span>GET A FREE QUOTE</span>
-              <svg
-                className="w-4 h-4 transform group-hover:translate-x-1 transition-transform"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
+          <motion.div
+            variants={itemVariants}
+            className="flex flex-col items-stretch sm:items-start md:flex-row md:items-center gap-2.5 sm:gap-3.5 max-w-[210px] xs:max-w-[230px] sm:max-w-[260px] md:max-w-none"
+          >
+            <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center w-full px-5 py-3 sm:px-7 sm:py-3.5 text-[11px] sm:text-xs font-bold uppercase tracking-wider text-slate-950 bg-brand-yellow hover:bg-brand-yellow-hover rounded-full shadow-sm transition-all duration-200 gap-2 text-center group"
               >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-              </svg>
-            </a>
+                <span>Get a Free Quote</span>
+                <span className="transform group-hover:translate-x-1 transition-transform">→</span>
+              </Link>
+            </motion.div>
 
-            {/* Secondary Dark Slate Button */}
-            <a
-              href="#services"
-              className="inline-flex items-center justify-center px-8 py-4 text-xs sm:text-sm font-bold uppercase tracking-wider text-white bg-slate-950 hover:bg-slate-800 active:scale-[0.98] rounded-full transition-all duration-200 text-center shadow-md"
-            >
-              EXPLORE SERVICES
-            </a>
-
-            {/* Direct Call Link */}
-          
-          </div>
-
-        </div>
+            <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
+              <Link
+                href="/services"
+                className="inline-flex items-center justify-center w-full px-5 py-3 sm:px-7 sm:py-3.5 text-[11px] sm:text-xs font-bold uppercase tracking-wider text-[#111827] bg-white/95 hover:bg-slate-50 border border-slate-200/90 rounded-full transition-all duration-200 text-center shadow-sm"
+              >
+                Explore Services
+              </Link>
+            </motion.div>
+          </motion.div>
+        </motion.div>
       </div>
-
-      {/* Bottom Horizontal Tech Capability Bar - Crisp Dark Typography */}
-      
     </section>
   );
 }

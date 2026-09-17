@@ -113,6 +113,10 @@
     line-height: 1.65;
     color: #4B5563;
   }
+
+  .font-script {
+    font-family: var(--font-caveat), cursive, sans-serif;
+  }
 }
 
 img, svg, video {

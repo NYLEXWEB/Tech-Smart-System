@@ -18,7 +18,7 @@ const ALL_PROJECTS: ProjectItem[] = [
     id: 1,
     title: "CCTV Security Installation",
     category: "CCTV",
-    subtitle: "Enterprise Surveillance",
+    subtitle: "Enterprise Surveillance ",
     description: "Advanced security solutions for a safer tomorrow.",
     image: "/gallery images/file_00000000147c81fd884ccb9651e01277.png",
   },

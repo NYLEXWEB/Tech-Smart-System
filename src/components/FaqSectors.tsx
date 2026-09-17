@@ -5,21 +5,11 @@ import { motion, AnimatePresence } from "framer-motion";
 
 export default function FaqSectors() {
   const [openIndex, setOpenIndex] = useState<number | null>(0); // First item open by default
-  const [activeCategory, setActiveCategory] = useState<string>("All");
   const [searchQuery, setSearchQuery] = useState<string>("");
-
-  const categories = [
-    { id: "All", label: "All Questions" },
-    { id: "Surveillance", label: "CCTV & Cameras" },
-    { id: "Automation", label: "Smart Automation" },
-    { id: "Inspection & Quote", label: "Quotes & Survey" },
-    { id: "Warranty & Support", label: "Warranty & AMC" },
-  ];
 
   const faqs = [
     {
       id: 1,
-      category: "Surveillance",
       question: "What security and surveillance systems do you provide?",
       answer:
         "Our comprehensive lineup includes 4K High-Definition CCTV Surveillance (IP, analog, & AI motion detection cameras), Centralized DVR & NVR Storage, Smart Home Automation, Electronic Smart Door Locks, RFID Access Control, Biometric Attendance, and Global Mobile Monitoring.",
@@ -27,7 +17,6 @@ export default function FaqSectors() {
     },
     {
       id: 2,
-      category: "Surveillance",
       question: "Can I monitor my CCTV cameras and automation remotely on my mobile phone?",
       answer:
         "Yes, all modern CCTV cameras and smart automation modules installed by TechSmart Systems come with secure, encrypted iOS and Android mobile app integration for real-time live streaming, motion alerts, multi-screen views, and two-way audio from anywhere in the world.",
@@ -35,7 +24,6 @@ export default function FaqSectors() {
     },
     {
       id: 3,
-      category: "Inspection & Quote",
       question: "What sectors and property types do you serve across Kerala?",
       answer:
         "We specialize in sales, configuration, and installation across Homes & Luxury Villas, Retail Shops, Corporate Offices, Educational Institutions, Hospitals, Warehouses, Commercial Centers, and Industrial Plants throughout Kollam and all Kerala districts.",
@@ -43,7 +31,6 @@ export default function FaqSectors() {
     },
     {
       id: 4,
-      category: "Inspection & Quote",
       question: "How can I request an on-site inspection and free quote?",
       answer:
         "You can reach our engineering office in Kollam directly by calling 0474 276 6666 or +91 9048 171 666, chatting on WhatsApp, or submitting your requirements through our instant online quote request form.",
@@ -51,7 +38,6 @@ export default function FaqSectors() {
     },
     {
       id: 5,
-      category: "Warranty & Support",
       question: "What after-sales warranty and maintenance support is provided?",
       answer:
         "With 25+ years of continuous service since 1999, we provide end-to-end manufacturer warranty support, annual maintenance contracts (AMC), routine firmware checkups, cable inspections, and rapid on-site technician dispatch for urgent support requests.",
@@ -59,28 +45,42 @@ export default function FaqSectors() {
     },
     {
       id: 6,
-      category: "Automation",
       question: "Do you offer custom Smart Door Locks & Access Control for homes and offices?",
       answer:
         "Yes! We provide biometric fingerprint locks, RFID smart card entry, digital passcode handles, and video door phones integrated with electric strike gates for both residential villas and high-security corporate offices.",
       highlight: "Biometric Fingerprint Locks, RFID Cards & Video Door Phones",
     },
+    {
+      id: 7,
+      question: "How much storage capacity is needed for CCTV recording?",
+      answer:
+        "Storage depends on the number of cameras, resolution (2MP, 4K), and recording mode (continuous vs motion-triggered). We configure surveillance-grade hard drives offering 15 to 60+ days of seamless video loop recording with automatic overwrite protection.",
+      highlight: "Surveillance-Grade HDDs (15 to 60+ Days Video Backup)",
+    },
+    {
+      id: 8,
+      question: "Will the security system work during power failures or electricity cuts?",
+      answer:
+        "Yes, our CCTV installations and smart controllers can be integrated with dedicated UPS power backups or solar inverter systems, ensuring uninterrupted 24/7 security and recording even during Kerala power outages.",
+      highlight: "Zero-Downtime UPS & Solar Power Inverter Integration",
+    },
   ];
 
-  // Filter FAQs based on active category tab & search query
+  // Filter FAQs based on search query
   const filteredFaqs = faqs.filter((faq) => {
-    const matchesCategory =
-      activeCategory === "All" || faq.category === activeCategory;
-    const matchesSearch =
-      faq.question.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      faq.answer.toLowerCase().includes(searchQuery.toLowerCase());
-    return matchesCategory && matchesSearch;
+    if (!searchQuery.trim()) return true;
+    const query = searchQuery.toLowerCase();
+    return (
+      faq.question.toLowerCase().includes(query) ||
+      faq.answer.toLowerCase().includes(query) ||
+      faq.highlight.toLowerCase().includes(query)
+    );
   });
 
   return (
     <section
       id="faq"
-      className="relative py-10 sm:py-14 bg-[#FAF9F5] text-[#111827] border-t border-slate-200/70 w-full max-w-full overflow-hidden select-none"
+      className="relative py-10 sm:py-16 bg-[#FAF9F5] text-[#111827] border-t border-slate-200/70 w-full max-w-full overflow-hidden select-none"
     >
       {/* Decorative Yellow Background Blur Orb */}
       <div className="absolute top-1/4 -right-40 w-96 h-96 bg-[#F5B800]/10 rounded-full blur-3xl pointer-events-none" />
@@ -105,23 +105,17 @@ export default function FaqSectors() {
             <span className="w-8 h-1 bg-[#F5B800] rounded-full" />
           </div>
 
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl text-slate-950 tracking-tight leading-[1.08] mb-4">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl text-slate-950 tracking-tight leading-[1.08]">
             Frequently Asked{" "}
             <span className="text-[#F5B800] relative inline-block">
               Questions
             </span>
           </h2>
-
-          <p className="text-sm sm:text-base text-slate-600 font-medium leading-relaxed max-w-xl mx-auto">
-            Find quick, authoritative answers to common questions about our CCTV surveillance, smart automation, installations, warranties, and site surveys across Kerala.
-          </p>
         </motion.div>
 
-        {/* Search Bar & Category Filter Controls */}
-        <div className="space-y-6 mb-10 sm:mb-12">
-          
-          {/* Interactive Search Bar */}
-          <div className="relative max-w-xl mx-auto">
+        {/* Search Bar */}
+        <div className="max-w-xl mx-auto mb-8 sm:mb-10">
+          <div className="relative">
             <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-400">
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -143,34 +137,10 @@ export default function FaqSectors() {
               </button>
             )}
           </div>
-
-          {/* Category Filter Pills */}
-          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
-            {categories.map((cat) => {
-              const isActive = activeCategory === cat.id;
-              return (
-                <button
-                  key={cat.id}
-                  onClick={() => {
-                    setActiveCategory(cat.id);
-                    setOpenIndex(null); // Close open item when changing tab
-                  }}
-                  className={`px-5 py-2.5 rounded-full text-xs sm:text-sm font-extrabold transition-all cursor-pointer ${
-                    isActive
-                      ? "bg-[#F5B800] text-slate-950 shadow-md scale-105"
-                      : "bg-white text-slate-700 hover:bg-slate-100 border border-slate-200/80 shadow-2xs"
-                  }`}
-                >
-                  {cat.label}
-                </button>
-              );
-            })}
-          </div>
-
         </div>
 
         {/* FAQ Accordion Cards List */}
-        <div className="space-y-4">
+        <div className="space-y-3.5">
           {filteredFaqs.length > 0 ? (
             filteredFaqs.map((faq, idx) => {
               const isOpen = openIndex === faq.id;
@@ -181,55 +151,55 @@ export default function FaqSectors() {
                   initial={{ opacity: 0, y: 15 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.3, delay: idx * 0.05 }}
-                  className={`rounded-[24px] border transition-all duration-300 overflow-hidden ${
+                  transition={{ duration: 0.3, delay: idx * 0.04 }}
+                  className={`rounded-2xl border transition-all duration-300 overflow-hidden ${
                     isOpen
-                      ? "bg-white border-amber-300 shadow-[0_15px_35px_rgba(245,184,0,0.12)] border-l-4 border-l-[#F5B800]"
+                      ? "bg-white border-amber-300 shadow-[0_10px_30px_rgba(245,184,0,0.10)] border-l-4 border-l-[#F5B800]"
                       : "bg-white/80 hover:bg-white border-slate-200/80 hover:border-slate-300 shadow-xs"
                   }`}
                 >
                   <button
                     onClick={() => setOpenIndex(isOpen ? null : faq.id)}
-                    className="w-full text-left p-5 sm:p-6 flex items-center justify-between gap-4 cursor-pointer select-none group"
+                    className="w-full text-left p-4 sm:p-5 flex items-center justify-between gap-4 cursor-pointer select-none group"
                   >
-                    <div className="flex items-center gap-3.5 sm:gap-4 flex-grow">
+                    <div className="flex items-center gap-3 sm:gap-3.5 flex-grow">
                       {/* Number Badge */}
                       <span
-                        className={`text-xs font-mono font-bold px-2.5 py-1 rounded-lg flex-shrink-0 transition-colors ${
+                        className={`text-xs font-mono font-medium px-2 py-0.5 rounded-md flex-shrink-0 transition-colors ${
                           isOpen
-                            ? "bg-[#F5B800] text-slate-950 shadow-xs"
-                            : "bg-slate-100 text-slate-500 group-hover:bg-amber-100 group-hover:text-amber-800"
+                            ? "bg-[#F5B800] text-slate-950 font-semibold"
+                            : "bg-slate-100 text-slate-500 group-hover:bg-amber-50 group-hover:text-amber-800"
                         }`}
                       >
                         0{idx + 1}
                       </span>
 
-                      {/* Question Text */}
+                      {/* Question Text - Slim, clean & readable */}
                       <h3
-                        className={`text-base sm:text-lg lg:text-xl font-extrabold tracking-tight leading-snug transition-colors ${
+                        className={`text-sm sm:text-base md:text-[17px] tracking-normal leading-snug transition-colors ${
                           isOpen
-                            ? "text-slate-950"
-                            : "text-slate-900 group-hover:text-[#D99B00]"
+                            ? "text-slate-950 font-semibold"
+                            : "text-slate-800 font-medium group-hover:text-[#D97706]"
                         }`}
                       >
                         {faq.question}
                       </h3>
                     </div>
 
-                    {/* Interactive Toggle Icon Circle */}
+                    {/* Slim Toggle Icon Circle */}
                     <div
-                      className={`w-9 h-9 sm:w-10 sm:h-10 rounded-full flex items-center justify-center flex-shrink-0 transition-all ${
+                      className={`w-8 h-8 sm:w-9 sm:h-9 rounded-full flex items-center justify-center flex-shrink-0 transition-all ${
                         isOpen
-                          ? "bg-[#F5B800] text-slate-950 rotate-180 shadow-md"
-                          : "bg-slate-100 text-slate-600 group-hover:bg-[#F5B800] group-hover:text-slate-950"
+                          ? "bg-[#F5B800] text-slate-950 rotate-180 shadow-xs"
+                          : "bg-slate-100 text-slate-500 group-hover:bg-[#F5B800] group-hover:text-slate-950"
                       }`}
                     >
                       <svg
-                        className="w-5 h-5 transition-transform"
+                        className="w-4 h-4 transition-transform"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
-                        strokeWidth={2.5}
+                        strokeWidth={2}
                       >
                         <path
                           strokeLinecap="round"
@@ -247,21 +217,21 @@ export default function FaqSectors() {
                         initial={{ height: 0, opacity: 0 }}
                         animate={{ height: "auto", opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.3, ease: [0.04, 0.62, 0.23, 0.98] }}
+                        transition={{ duration: 0.25, ease: [0.04, 0.62, 0.23, 0.98] }}
                         className="overflow-hidden"
                       >
-                        <div className="px-5 sm:px-6 pb-6 pt-1 border-t border-slate-100/80 space-y-4">
+                        <div className="px-4 sm:px-5 pb-5 pt-1 border-t border-slate-100 space-y-3">
                           {/* Answer Text */}
-                          <p className="text-sm sm:text-base text-slate-600 font-medium leading-relaxed pl-9 sm:pl-11">
+                          <p className="text-sm text-slate-600 font-normal leading-relaxed pl-7 sm:pl-9">
                             {faq.answer}
                           </p>
 
                           {/* Technical Highlight Pill */}
-                          <div className="pl-9 sm:pl-11 flex flex-wrap items-center gap-2 pt-1">
-                            <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-slate-400">
+                          <div className="pl-7 sm:pl-9 flex flex-wrap items-center gap-2 pt-1">
+                            <span className="text-[11px] font-mono font-medium uppercase tracking-wider text-slate-400">
                               KEY BENEFIT:
                             </span>
-                            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-50 border border-amber-200/70 text-xs font-bold text-slate-900">
+                            <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-amber-50 border border-amber-200/70 text-xs font-medium text-slate-800">
                               <span className="w-1.5 h-1.5 rounded-full bg-[#F5B800]" />
                               {faq.highlight}
                             </span>
@@ -275,22 +245,19 @@ export default function FaqSectors() {
             })
           ) : (
             /* Empty Search Results State */
-            <div className="text-center py-12 bg-white rounded-[24px] border border-slate-200/80 p-8">
-              <div className="w-12 h-12 rounded-full bg-amber-50 text-[#F5B800] flex items-center justify-center mx-auto mb-3">
-                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <div className="text-center py-10 bg-white rounded-2xl border border-slate-200/80 p-6">
+              <div className="w-10 h-10 rounded-full bg-amber-50 text-[#F5B800] flex items-center justify-center mx-auto mb-2.5">
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
                 </svg>
               </div>
-              <h3 className="text-lg font-bold text-slate-900 mb-1">No matching questions found</h3>
-              <p className="text-sm text-slate-500 mb-4">Try searching with different keywords like &quot;CCTV&quot;, &quot;Quote&quot;, or &quot;Warranty&quot;.</p>
+              <h3 className="text-base font-bold text-slate-900 mb-1">No matching questions found</h3>
+              <p className="text-xs sm:text-sm text-slate-500 mb-3">Try searching with different keywords like &quot;CCTV&quot;, &quot;Quote&quot;, or &quot;Warranty&quot;.</p>
               <button
-                onClick={() => {
-                  setSearchQuery("");
-                  setActiveCategory("All");
-                }}
-                className="px-5 py-2 rounded-full bg-[#F5B800] text-slate-950 font-bold text-xs uppercase tracking-wider shadow-sm"
+                onClick={() => setSearchQuery("")}
+                className="px-4 py-2 rounded-full bg-[#F5B800] text-slate-950 font-bold text-xs uppercase tracking-wider shadow-xs"
               >
-                Reset Search Filters
+                Reset Search
               </button>
             </div>
           )}

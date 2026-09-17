@@ -39,6 +39,8 @@ const config: Config = {
         "4xl": "2rem",
       },
       fontFamily: {
+        lora: ["var(--font-lora)", "Lora", "serif"],
+        serif: ["var(--font-lora)", "Lora", "Georgia", "serif"],
         script: ["var(--font-caveat)", "Caveat", "cursive"],
         caveat: ["var(--font-caveat)", "Caveat", "cursive"],
         sans: [

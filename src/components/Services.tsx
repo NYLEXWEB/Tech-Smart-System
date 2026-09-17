@@ -10,18 +10,18 @@ export default function Services() {
     {
       number: "01",
       title: "CCTV Surveillance",
-      description: "Complete 24/7 surveillance coverage, high-definition night vision, AI motion alerts, and perimeter defense for homes and business premises.",
+      description: "HD, IP, AI & smart camera systems",
       image: "/images/services/cctv.jpg",
       icon: (
         <svg className="w-5 h-5 text-slate-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 00-2 2z" />
         </svg>
       ),
     },
     {
       number: "02",
       title: "Security Systems & Integration",
-      description: "Surveillance and integrated security infrastructure designed around customer requirements for residential estates, shops, and offices.",
+      description: "Surveillance and integrated security solutions",
       image: "/images/services/security-systems.jpg",
       icon: (
         <svg className="w-5 h-5 text-slate-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -32,7 +32,7 @@ export default function Services() {
     {
       number: "03",
       title: "DVR & NVR Storage",
-      description: "Enterprise storage redundancy and remote network access for continuous 24/7 recording and instant playback retrieval.",
+      description: "Recording, storage and remote access",
       image: "/images/services/dvr-nvr.jpg",
       icon: (
         <svg className="w-5 h-5 text-slate-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -43,7 +43,7 @@ export default function Services() {
     {
       number: "04",
       title: "Home Automation",
-      description: "Smart automation controls for lighting, security gates, appliances, and climate management easily operated from your smartphone.",
+      description: "Smart home and remote-control solutions",
       image: "/images/services/home-automation.jpg",
       icon: (
         <svg className="w-5 h-5 text-slate-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -54,7 +54,7 @@ export default function Services() {
     {
       number: "05",
       title: "Access Control",
-      description: "Restricted entry management, electronic smart door locks, and RFID security for offices, schools, and commercial facilities.",
+      description: "Door access and security management",
       image: "/images/services/access-control.jpg",
       icon: (
         <svg className="w-5 h-5 text-slate-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -65,7 +65,7 @@ export default function Services() {
     {
       number: "06",
       title: "Biometric Systems",
-      description: "High-accuracy biometric attendance and secure door access solutions for transparent staff management and audit trails.",
+      description: "Attendance and access solutions",
       image: "/images/services/biometrics.jpg",
       icon: (
         <svg className="w-5 h-5 text-slate-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -76,7 +76,7 @@ export default function Services() {
     {
       number: "07",
       title: "Remote Monitoring",
-      description: "Live camera feed access and instant activity alerts directly on iOS and Android smartphone applications anywhere in the world.",
+      description: "Mobile viewing and remote surveillance",
       image: "/images/services/remote-monitoring.jpg",
       icon: (
         <svg className="w-5 h-5 text-slate-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -87,7 +87,7 @@ export default function Services() {
     {
       number: "08",
       title: "Installation & Service",
-      description: "Professional cabling, camera mounting, system configuration, routine maintenance, and rapid technical support across Kerala.",
+      description: "Installation, maintenance and technical support",
       image: "/images/services/installation.jpg",
       icon: (
         <svg className="w-5 h-5 text-slate-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -98,16 +98,16 @@ export default function Services() {
   ];
 
   return (
-    <section id="services" className="py-10 sm:py-14 bg-white border-t border-slate-200/70 w-full max-w-full overflow-hidden">
+    <section id="services" className="py-12 sm:py-16 bg-white border-t border-slate-200/70 w-full max-w-full overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        
+
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.6 }}
-          className="text-center max-w-3xl mx-auto mb-8 sm:mb-10"
+          className="text-center max-w-3xl mx-auto mb-10 sm:mb-12"
         >
           <div className="eyebrow-badge mb-3">
             <span className="eyebrow-bullet" />
@@ -119,47 +119,47 @@ export default function Services() {
           </h2>
         </motion.div>
 
-        {/* Services Cards List */}
-        <div className="space-y-6 sm:space-y-8 max-w-6xl mx-auto w-full">
+        {/* Services Cards List - Generous on Desktop with Short Descriptions */}
+        <div className="space-y-6 sm:space-y-8 max-w-5xl mx-auto w-full">
           {services.map((service, index) => {
             const isEven = index % 2 === 1;
 
             return (
               <motion.div
                 key={service.number}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 25 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.6, delay: 0.05, ease: "easeOut" }}
-                whileHover={{ y: -4, transition: { duration: 0.2 } }}
-                className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center w-full p-5 sm:p-8 rounded-3xl bg-slate-50/80 border border-slate-200/90 hover:border-slate-300 hover:bg-slate-50 transition-all duration-200 shadow-sm"
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{ duration: 0.5, delay: 0.05, ease: "easeOut" }}
+                whileHover={{ y: -3, transition: { duration: 0.2 } }}
+                className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center w-full p-5 sm:p-7 lg:p-8 rounded-3xl bg-slate-50/90 border border-slate-200/90 hover:border-slate-300 hover:bg-slate-50 transition-all duration-200 shadow-sm"
               >
                 {/* Content Block */}
                 <div
-                  className={`lg:col-span-6 space-y-4 ${
-                    isEven ? "lg:order-2" : "lg:order-1"
-                  }`}
+                  className={`lg:col-span-6 space-y-3 sm:space-y-3.5 ${isEven ? "lg:order-2" : "lg:order-1"
+                    }`}
                 >
                   <div className="flex items-center justify-between">
                     <span className="px-2.5 py-0.5 rounded-md bg-[#F59E0B]/20 text-[#111827] font-bold text-xs">
                       {service.number}
                     </span>
 
-                    <div className="w-9 h-9 rounded-xl bg-white border border-slate-200 shadow-sm flex items-center justify-center">
+                    <div className="w-9 h-9 rounded-xl bg-white border border-slate-200/80 shadow-xs flex items-center justify-center">
                       {service.icon}
                     </div>
                   </div>
 
-                  <h3 className="text-xl sm:text-2xl font-semibold text-[#111827] tracking-[-0.015em]">
+                  <h3 className="text-xl sm:text-2xl font-bold text-[#111827] tracking-tight">
                     {service.title}
                   </h3>
 
-                  <p className="text-sm sm:text-base text-[#4B5563] leading-[1.65] font-normal">
+                  {/* Short Description (Visible on mobile & desktop) */}
+                  <p className="text-xs sm:text-sm text-[#4B5563] leading-relaxed font-normal">
                     {service.description}
                   </p>
 
-                  {/* Mobile-Only Image Displayed Between Sentence & Buttons */}
-                  <div className="block lg:hidden w-full aspect-[16/10] rounded-2xl overflow-hidden bg-slate-100 relative shadow-sm my-2">
+                  {/* Mobile-Only Image Displayed Between Title & Buttons */}
+                  <div className="block lg:hidden w-full aspect-[16/9] max-h-[190px] rounded-xl overflow-hidden bg-slate-100 relative shadow-xs my-2">
                     <Image
                       src={service.image}
                       alt={service.title}
@@ -169,27 +169,27 @@ export default function Services() {
                     />
                   </div>
 
-                  <div className="pt-2 flex items-center gap-3">
-                    <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.96 }}>
+                  <div className="pt-2 sm:pt-3 flex flex-wrap items-center gap-3">
+                    <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
                       <Link
                         href="/contact"
-                        className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-full bg-[#111827] hover:bg-slate-800 text-white text-xs font-semibold tracking-wide transition-colors duration-150"
+                        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#111827] hover:bg-slate-800 active:scale-[0.98] text-white text-xs sm:text-[13px] font-semibold tracking-wide transition-all shadow-sm"
                       >
                         <span>Get Free Quote</span>
                         <span>→</span>
                       </Link>
                     </motion.div>
 
-                    <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.96 }}>
+                    <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
                       <a
                         href={`https://wa.me/919048171666?text=${encodeURIComponent(
                           `Hello TechSmart Systems, I would like to inquire about your ${service.title} service.`
                         )}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-full bg-[#25D366] hover:bg-[#1EBE5D] text-white text-xs font-semibold transition-all duration-150 shadow-sm"
+                        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#25D366] hover:bg-[#1EBE5D] active:scale-[0.98] text-white text-xs sm:text-[13px] font-semibold transition-all shadow-sm"
                       >
-                        <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                        <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
                           <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2zm.01 1.67c2.2 0 4.26.86 5.82 2.42a8.212 8.212 0 012.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.45 0-2.87-.38-4.12-1.1l-.3-.17-3.12.82.83-3.04-.19-.31a8.196 8.196 0 01-1.26-4.44c0-4.54 3.7-8.24 8.24-8.24zm4.5 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.98-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.24-.75-.67-1.25-1.5-1.4-1.75-.14-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.13-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43-.14-.01-.31-.01-.48-.01s-.44.06-.67.31c-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.78 2.72 4.31 3.81.6.26 1.07.42 1.44.54.61.19 1.16.17 1.6.1 1.04-.15 2.17-.89 2.48-1.75.3-.86.3-1.6.21-1.75-.09-.15-.25-.23-.5-.36z" />
                         </svg>
                         <span>WhatsApp</span>
@@ -198,13 +198,12 @@ export default function Services() {
                   </div>
                 </div>
 
-                {/* Desktop-Only Image Block (Seamless single card) */}
+                {/* Desktop-Only Image Block */}
                 <div
-                  className={`hidden lg:block lg:col-span-6 ${
-                    isEven ? "lg:order-1" : "lg:order-2"
-                  }`}
+                  className={`hidden lg:block lg:col-span-6 ${isEven ? "lg:order-1" : "lg:order-2"
+                    }`}
                 >
-                  <div className="relative aspect-[16/10] w-full rounded-2xl overflow-hidden bg-slate-100 shadow-sm group">
+                  <div className="relative aspect-[16/10] h-[210px] lg:h-[230px] w-full rounded-2xl overflow-hidden bg-slate-100 shadow-xs group">
                     <Image
                       src={service.image}
                       alt={service.title}

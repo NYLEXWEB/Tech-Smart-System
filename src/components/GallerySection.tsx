@@ -167,7 +167,7 @@ function MobileGalleryRow({
       onTouchEnd={handleTouchEnd}
       onMouseDown={handleTouchStart}
       onMouseUp={handleTouchEnd}
-      className="flex gap-3 overflow-x-auto no-scrollbar py-1 select-none"
+      className="flex gap-3.5 overflow-x-auto no-scrollbar py-1 select-none"
       style={{
         WebkitOverflowScrolling: "touch",
         scrollbarWidth: "none",
@@ -178,14 +178,14 @@ function MobileGalleryRow({
         <div
           key={`${item.id}-${idx}`}
           onClick={() => onItemClick(item)}
-          className="relative w-48 h-32 flex-shrink-0 rounded-2xl overflow-hidden shadow-md border border-slate-200/90 cursor-pointer active:scale-95 transition-transform bg-slate-950"
+          className="relative w-[260px] h-[165px] flex-shrink-0 rounded-lg overflow-hidden shadow-md border border-slate-200/90 cursor-pointer active:scale-98 transition-transform bg-slate-900 group"
         >
           <Image
             src={item.image}
             alt={item.title}
             fill
-            sizes="192px"
-            className="object-cover"
+            sizes="260px"
+            className="object-cover group-hover:scale-105 transition-transform duration-300"
           />
         </div>
       ))}
@@ -241,7 +241,7 @@ export default function GallerySection() {
   return (
     <section
       id="gallery"
-      className="relative py-10 sm:py-14 bg-[#F8F8F6] border-t border-b border-slate-200/70 w-full max-w-full overflow-hidden text-slate-900 select-none"
+      className="relative py-10 sm:py-16 bg-[#F8F8F6] border-t border-b border-slate-200/70 w-full max-w-full overflow-hidden text-slate-900 select-none"
     >
       {/* Side Decorative Watermarks */}
       <div className="hidden xl:block absolute left-8 top-28 text-[11px] font-mono font-bold tracking-[0.25em] text-slate-400/50 uppercase space-y-1.5 pointer-events-none">
@@ -294,7 +294,7 @@ export default function GallerySection() {
 
         {/* Desktop 3D Coverflow Carousel Container */}
         <div
-          className="hidden sm:flex relative min-h-[420px] lg:min-h-[480px] items-center justify-center mb-6 overflow-visible"
+          className="hidden sm:flex relative min-h-[440px] lg:min-h-[500px] items-center justify-center mb-6 overflow-visible"
           style={{ perspective: "1200px" }}
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
@@ -309,13 +309,13 @@ export default function GallerySection() {
                   transform: "perspective(1000px) rotateY(26deg) scale(0.82) translateZ(-40px)",
                   transformOrigin: "right center",
                 }}
-                className="relative w-44 md:w-48 h-[310px] md:h-[350px] rounded-2xl overflow-hidden border border-slate-300/80 shadow-xl cursor-pointer opacity-75 hover:opacity-100 transition-all duration-500 bg-slate-950 flex-shrink-0 -mr-6 z-0 group"
+                className="relative w-48 md:w-52 h-[330px] md:h-[370px] rounded-lg overflow-hidden border border-slate-300/80 shadow-xl cursor-pointer opacity-75 hover:opacity-100 transition-all duration-500 bg-slate-950 flex-shrink-0 -mr-6 z-0 group"
               >
                 <Image
                   src={getProjectAtOffset(-2)!.image}
                   alt={getProjectAtOffset(-2)!.title}
                   fill
-                  sizes="200px"
+                  sizes="220px"
                   className="object-cover group-hover:scale-105 transition-transform"
                 />
               </div>
@@ -329,13 +329,13 @@ export default function GallerySection() {
                   transform: "perspective(1000px) rotateY(18deg) scale(0.9) translateZ(-10px)",
                   transformOrigin: "right center",
                 }}
-                className="relative w-52 md:w-60 h-[350px] md:h-[390px] rounded-2xl sm:rounded-3xl overflow-hidden border border-slate-300/90 shadow-2xl cursor-pointer opacity-90 hover:opacity-100 transition-all duration-500 bg-slate-950 flex-shrink-0 -mr-4 z-10 group"
+                className="relative w-56 md:w-64 h-[370px] md:h-[410px] rounded-lg sm:rounded-xl overflow-hidden border border-slate-300/90 shadow-2xl cursor-pointer opacity-90 hover:opacity-100 transition-all duration-500 bg-slate-950 flex-shrink-0 -mr-4 z-10 group"
               >
                 <Image
                   src={getProjectAtOffset(-1)!.image}
                   alt={getProjectAtOffset(-1)!.title}
                   fill
-                  sizes="240px"
+                  sizes="260px"
                   className="object-cover group-hover:scale-105 transition-transform"
                 />
               </div>
@@ -350,13 +350,13 @@ export default function GallerySection() {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.4 }}
                 onClick={() => setModalProject(currentProject)}
-                className="relative w-full max-w-xl md:max-w-2xl h-[390px] md:h-[450px] rounded-3xl overflow-hidden border-2 border-slate-200/90 shadow-2xl bg-slate-950 flex-shrink-0 z-30 group shadow-slate-400/20 cursor-pointer"
+                className="relative w-full max-w-xl md:max-w-2xl lg:max-w-3xl h-[410px] md:h-[470px] rounded-xl overflow-hidden border-2 border-slate-200/90 shadow-2xl bg-slate-950 flex-shrink-0 z-30 group shadow-slate-400/20 cursor-pointer"
               >
                 <Image
                   src={currentProject.image}
                   alt={currentProject.title}
                   fill
-                  sizes="(max-width: 1024px) 580px, 680px"
+                  sizes="(max-width: 1024px) 640px, 780px"
                   className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                   priority
                 />
@@ -371,13 +371,13 @@ export default function GallerySection() {
                   transform: "perspective(1000px) rotateY(-18deg) scale(0.9) translateZ(-10px)",
                   transformOrigin: "left center",
                 }}
-                className="relative w-52 md:w-60 h-[350px] md:h-[390px] rounded-2xl sm:rounded-3xl overflow-hidden border border-slate-300/90 shadow-2xl cursor-pointer opacity-90 hover:opacity-100 transition-all duration-500 bg-slate-950 flex-shrink-0 -ml-4 z-10 group"
+                className="relative w-56 md:w-64 h-[370px] md:h-[410px] rounded-lg sm:rounded-xl overflow-hidden border border-slate-300/90 shadow-2xl cursor-pointer opacity-90 hover:opacity-100 transition-all duration-500 bg-slate-950 flex-shrink-0 -ml-4 z-10 group"
               >
                 <Image
                   src={getProjectAtOffset(1)!.image}
                   alt={getProjectAtOffset(1)!.title}
                   fill
-                  sizes="240px"
+                  sizes="260px"
                   className="object-cover group-hover:scale-105 transition-transform"
                 />
               </div>
@@ -391,13 +391,13 @@ export default function GallerySection() {
                   transform: "perspective(1000px) rotateY(-26deg) scale(0.82) translateZ(-40px)",
                   transformOrigin: "left center",
                 }}
-                className="relative w-44 md:w-48 h-[310px] md:h-[350px] rounded-2xl overflow-hidden border border-slate-300/80 shadow-xl cursor-pointer opacity-75 hover:opacity-100 transition-all duration-500 bg-slate-950 flex-shrink-0 -ml-6 z-0 group"
+                className="relative w-48 md:w-52 h-[330px] md:h-[370px] rounded-lg overflow-hidden border border-slate-300/80 shadow-xl cursor-pointer opacity-75 hover:opacity-100 transition-all duration-500 bg-slate-950 flex-shrink-0 -ml-6 z-0 group"
               >
                 <Image
                   src={getProjectAtOffset(2)!.image}
                   alt={getProjectAtOffset(2)!.title}
                   fill
-                  sizes="200px"
+                  sizes="220px"
                   className="object-cover group-hover:scale-105 transition-transform"
                 />
               </div>
@@ -441,7 +441,7 @@ export default function GallerySection() {
         </div>
 
         {/* Dedicated Mobile View: 2 Auto-Scrolling Lines with Touch Drag Control */}
-        <div className="sm:hidden w-full space-y-3 my-2">
+        <div className="sm:hidden w-full space-y-3.5 my-2">
           {/* Top Line: Auto-scrolling Left */}
           <MobileGalleryRow
             items={mobileRow1}
@@ -471,7 +471,7 @@ export default function GallerySection() {
           >
             <div
               onClick={(e) => e.stopPropagation()}
-              className="relative max-w-4xl w-full bg-slate-900 rounded-3xl overflow-hidden shadow-2xl border border-slate-800 text-white p-4 sm:p-6 space-y-4"
+              className="relative max-w-4xl w-full bg-slate-900 rounded-xl overflow-hidden shadow-2xl border border-slate-800 text-white p-4 sm:p-6 space-y-4"
             >
               <button
                 onClick={() => setModalProject(null)}
@@ -480,7 +480,7 @@ export default function GallerySection() {
                 ✕
               </button>
 
-              <div className="relative aspect-[16/10] w-full rounded-2xl overflow-hidden bg-slate-950">
+              <div className="relative aspect-[16/10] w-full rounded-lg overflow-hidden bg-slate-950">
                 <Image
                   src={modalProject.image}
                   alt={modalProject.title}

@@ -17,10 +17,10 @@ export default function Logo({
 
   const heightClass =
     size === "sm"
-      ? "h-8 sm:h-9"
+      ? "h-[32px] sm:h-[36px]"
       : size === "lg"
-      ? "h-13 sm:h-14 md:h-16"
-      : "h-9 sm:h-10 md:h-11";
+      ? "h-[48px] xs:h-[52px] sm:h-[54px] md:h-[58px]"
+      : "h-[40px] xs:h-[44px] sm:h-[46px] md:h-[50px]";
 
   return (
     <div className={`relative flex items-center select-none ${className}`}>

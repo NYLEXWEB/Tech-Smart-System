@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Caveat } from "next/font/google";
+import { Inter, Caveat, Lora } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import "./globals.css";
@@ -16,6 +16,13 @@ const caveat = Caveat({
   variable: "--font-caveat",
   display: "swap",
   weight: ["400", "600", "700"],
+});
+
+const lora = Lora({
+  subsets: ["latin"],
+  variable: "--font-lora",
+  display: "swap",
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -47,7 +54,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${caveat.variable} font-sans`}
+      className={`${inter.variable} ${caveat.variable} ${lora.variable} font-sans`}
     >
       <body className="bg-white text-[#4B5563] antialiased selection:bg-[#F59E0B] selection:text-[#111827] min-h-screen flex flex-col font-sans">
         <Navbar />

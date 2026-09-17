@@ -8,8 +8,8 @@ export default function Hero() {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
 
   return (
-    <section className="relative min-h-[100dvh] md:h-screen md:min-h-0 flex flex-col justify-center overflow-hidden bg-white w-full max-w-full pt-20 sm:pt-24 md:pt-0 pb-0 text-[#111827] select-none">
-      
+    <section className="relative min-h-[100dvh] md:h-screen md:min-h-0 flex flex-col justify-start md:justify-center overflow-hidden bg-white w-full max-w-full pt-[215px] xs:pt-[230px] sm:pt-[245px] md:pt-0 pb-12 sm:pb-8 text-[#111827] select-none">
+
       {/* Mobile View: Vertical Hero Background */}
       <div
         className="block md:hidden absolute inset-0 z-0 w-full h-full bg-cover bg-[center_top] bg-no-repeat pointer-events-none"
@@ -28,47 +28,47 @@ export default function Hero() {
         aria-hidden="true"
       />
 
-      {/* Main Hero Grid Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full my-auto py-8 sm:py-12 md:py-0">
+      {/* Main Hero Content (Positioned in clean white safe area) */}
+      <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 w-full md:my-auto md:py-0">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-          
-          {/* Left Column (Main Copy & CTAs) */}
+
+          {/* Main Copy & CTAs (Shifted right on desktop to clear left camera) */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
+            initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
-            className="lg:col-span-7 space-y-6 text-left max-w-2xl"
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="lg:col-span-8 xl:col-span-8 md:pl-24 lg:pl-36 xl:pl-44 space-y-3 xs:space-y-3.5 sm:space-y-5 lg:space-y-6 text-left max-w-full sm:max-w-2xl lg:max-w-3xl"
           >
-            {/* Eyebrow Badge */}
+            {/* Tagline / Eyebrow Badge */}
             <div className="flex items-center gap-2.5">
-              <span className="w-8 h-1 bg-[#F5B800] rounded-full" />
-              <span className="text-xs font-mono font-bold tracking-[0.2em] text-slate-500 uppercase">
+              <span className="w-7 sm:w-8 h-1 bg-[#F5A800] rounded-full flex-shrink-0" />
+              <span className="text-[10px] xs:text-[11px] sm:text-xs font-mono font-bold tracking-[0.18em] sm:tracking-[0.2em] text-slate-600 uppercase">
                 SECURITY TODAY • A SAFER TOMORROW
               </span>
             </div>
 
-            {/* Headline H1 */}
-            <h1 className="text-4xl sm:text-6xl lg:text-7xl text-slate-950 tracking-tight leading-[1.06]">
-              Complete<br />
-              <span className="text-[#F5B800]">CCTV Solutions</span><br />
-              for a Safer World
+            {/* Headline H1 (Slimmer Lora Font with strict 1-line per segment) */}
+            <h1 className="font-lora text-[28px] xs:text-[32px] sm:text-4xl md:text-5xl lg:text-[54px] xl:text-[62px] font-semibold text-slate-950 tracking-normal leading-[1.22] sm:leading-[1.18]">
+              <span className="block">Complete</span>
+              <span className="block whitespace-nowrap text-[#F5A800]">CCTV Solutions</span>
+              <span className="block whitespace-nowrap">for a Safer World</span>
             </h1>
 
             {/* Narrative Subtitle */}
-            <p className="text-sm sm:text-base text-slate-600 font-medium leading-relaxed max-w-lg">
+            <p className="text-[12px] xs:text-[13px] sm:text-base text-slate-600 font-normal leading-relaxed max-w-[290px] xs:max-w-[320px] sm:max-w-lg">
               Protect what matters with smart security solutions for your home and business. Serving Kollam &amp; all Kerala districts since 1999.
             </p>
 
-            {/* CTA Button Row */}
-            <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-6">
-              
+            {/* CTA Button Stack (Shifted to right to clear camera) */}
+            <div className="pt-1 sm:pt-2 flex flex-col sm:flex-row items-start sm:items-center gap-2.5 sm:gap-4 w-full md:pl-1 lg:pl-2">
+
               {/* Primary Yellow CTA Button */}
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-between gap-4 px-7 py-3.5 rounded-full bg-gradient-to-r from-[#FFC400] to-[#F5B800] hover:from-[#F5B800] hover:to-[#E0A800] text-slate-950 font-extrabold text-xs sm:text-sm uppercase tracking-wider shadow-lg hover:shadow-xl transition-all group cursor-pointer"
+                className="w-[230px] xs:w-[245px] sm:w-auto inline-flex items-center justify-between sm:justify-center gap-3 px-5 py-3 rounded-full bg-[#F5A800] hover:bg-[#DF9800] active:scale-[0.98] text-slate-950 font-extrabold text-xs sm:text-sm uppercase tracking-wider shadow-sm transition-all group cursor-pointer"
               >
-                <span>Get a Quote</span>
-                <div className="w-8 h-8 rounded-full bg-slate-950 text-white flex items-center justify-center font-bold text-sm transform group-hover:translate-x-1 transition-transform">
+                <span>GET A QUOTE</span>
+                <div className="w-6 h-6 rounded-full bg-slate-950 text-white flex items-center justify-center font-bold text-xs transform group-hover:translate-x-0.5 transition-transform">
                   →
                 </div>
               </Link>
@@ -76,10 +76,10 @@ export default function Hero() {
               {/* Watch Video Secondary Button */}
               <button
                 onClick={() => setIsVideoOpen(true)}
-                className="inline-flex items-center gap-3 px-5 py-3 rounded-full bg-white/90 backdrop-blur-md border border-slate-200 shadow-sm hover:shadow-md text-slate-900 font-bold text-xs sm:text-sm transition-all cursor-pointer group"
+                className="w-[200px] xs:w-[215px] sm:w-auto inline-flex items-center justify-start gap-3 px-4.5 py-2.5 rounded-full bg-[#F1F5F9]/90 sm:bg-white/95 backdrop-blur-md border border-slate-200/60 shadow-xs hover:shadow-sm active:scale-[0.98] text-slate-900 font-bold text-xs sm:text-sm transition-all cursor-pointer group"
               >
-                <div className="w-9 h-9 rounded-full bg-slate-950 text-white flex items-center justify-center shadow-xs group-hover:scale-105 transition-transform">
-                  <svg className="w-4 h-4 fill-current ml-0.5" viewBox="0 0 24 24">
+                <div className="w-6 h-6 rounded-full bg-slate-950 text-white flex items-center justify-center shadow-xs group-hover:scale-105 transition-transform">
+                  <svg className="w-2.5 h-2.5 fill-current ml-0.5" viewBox="0 0 24 24">
                     <polygon points="5,3 19,12 5,21" />
                   </svg>
                 </div>
@@ -90,22 +90,11 @@ export default function Hero() {
 
           </motion.div>
 
-          {/* Right Column (Floating Badges & Interactive Camera Visual Elements) */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="lg:col-span-5 relative hidden lg:block h-[420px]"
-          >
-        
-
-            
-
-          </motion.div>
+          {/* Right Column Spacer */}
+          <div className="hidden lg:block lg:col-span-4 xl:col-span-4" aria-hidden="true" />
 
         </div>
       </div>
-
 
       {/* Video Lightbox Modal */}
       <AnimatePresence>

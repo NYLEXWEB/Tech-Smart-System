@@ -10,7 +10,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="relative py-20 sm:py-28 bg-[#FDFDFD] text-[#111827] border-t border-b border-slate-200/70 w-full max-w-full overflow-hidden select-none"
+      className="relative py-10 sm:py-14 bg-[#FDFDFD] text-[#111827] border-t border-b border-slate-200/70 w-full max-w-full overflow-hidden select-none"
     >
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 sm:gap-16 items-center">
@@ -75,22 +75,7 @@ export default function About() {
               </div>
 
               {/* Handwritten Annotation below CTA */}
-              <div className="relative text-slate-600 pointer-events-none">
-                <span className="font-script text-lg sm:text-xl text-slate-700 block rotate-[-4deg] leading-none">
-                  Technology for a Better Tomorrow
-                </span>
-                <svg
-                  className="w-12 h-6 text-amber-500 transform -rotate-12 -mt-1"
-                  viewBox="0 0 50 30"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                >
-                  <path d="M 5 25 Q 25 5 45 15" />
-                  <path d="M 40 10 L 45 15 L 38 20" />
-                </svg>
-              </div>
+            
 
             </div>
           </motion.div>
@@ -122,43 +107,7 @@ export default function About() {
                 />
               </div>
 
-              {/* Clean Solid White Floating Card */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                className="absolute -bottom-6 left-2 sm:left-4 z-30 bg-white rounded-[26px] p-5 sm:p-6 border border-slate-100 shadow-[0_20px_50px_rgba(0,0,0,0.14)] space-y-3 min-w-[210px] sm:min-w-[230px]"
-              >
-                {/* Yellow Icon Box */}
-                <div className="w-11 h-11 rounded-2xl bg-[#F5B800] text-slate-950 flex items-center justify-center font-black shadow-sm">
-                  <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.2}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                  </svg>
-                </div>
-
-                <div>
-                  <div className="text-xs font-semibold text-slate-500">Trusted by</div>
-                  <div className="text-lg font-black text-slate-950 leading-tight">Businesses</div>
-                </div>
-
-                {/* Real User Photo Avatar Circles */}
-                <div className="flex items-center gap-1.5 pt-2 border-t border-slate-100">
-                  <div className="w-8 h-8 rounded-full border-2 border-white shadow-xs overflow-hidden relative">
-                    <Image src="/images/avatar-1.jpg" alt="Client Avatar 1" fill className="object-cover" />
-                  </div>
-                  <div className="w-8 h-8 rounded-full border-2 border-white shadow-xs overflow-hidden relative">
-                    <Image src="/images/avatar-2.jpg" alt="Client Avatar 2" fill className="object-cover" />
-                  </div>
-                  <div className="w-8 h-8 rounded-full border-2 border-white shadow-xs overflow-hidden relative">
-                    <Image src="/images/avatar-3.jpg" alt="Client Avatar 3" fill className="object-cover" />
-                  </div>
-                  <div className="w-8 h-8 rounded-full bg-[#F5B800] text-slate-950 font-black text-xs flex items-center justify-center border-2 border-white shadow-xs cursor-pointer hover:scale-105 transition-transform">
-                    +
-                  </div>
-                </div>
-              </motion.div>
-
+              
             </div>
           </motion.div>
 

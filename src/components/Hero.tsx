@@ -8,11 +8,11 @@ export default function Hero() {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
 
   return (
-    <section className="relative min-h-[100dvh] md:min-h-screen flex flex-col justify-between overflow-hidden bg-white w-full max-w-full pt-20 sm:pt-28 pb-0 text-[#111827] select-none">
+    <section className="relative min-h-[100dvh] md:h-screen md:min-h-0 flex flex-col justify-center overflow-hidden bg-white w-full max-w-full pt-20 sm:pt-24 md:pt-0 pb-0 text-[#111827] select-none">
       
       {/* Mobile View: Vertical Hero Background */}
       <div
-        className="block md:hidden absolute inset-0 z-0 w-full h-full bg-cover bg-[center_top] bg-no-repeat pointer-events-none opacity-40"
+        className="block md:hidden absolute inset-0 z-0 w-full h-full bg-cover bg-[center_top] bg-no-repeat pointer-events-none"
         style={{
           backgroundImage: "url('/images/hero-section-mobile.png')",
         }}
@@ -29,7 +29,7 @@ export default function Hero() {
       />
 
       {/* Main Hero Grid Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full my-auto py-8 sm:py-16">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full my-auto py-8 sm:py-12 md:py-0">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
           {/* Left Column (Main Copy & CTAs) */}
@@ -88,53 +88,6 @@ export default function Hero() {
 
             </div>
 
-            {/* Property Sector Badges Row */}
-            <div className="pt-6 sm:pt-8 border-t border-slate-200/80">
-              <div className="grid grid-cols-4 gap-2 sm:gap-4 max-w-md">
-                
-                {/* Sector 1: Homes */}
-                <div className="flex flex-col items-center text-center space-y-1.5">
-                  <div className="w-11 h-11 rounded-2xl bg-white border border-slate-200 shadow-sm flex items-center justify-center text-slate-900">
-                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-                    </svg>
-                  </div>
-                  <span className="text-[11px] sm:text-xs font-bold text-slate-700">Homes</span>
-                </div>
-
-                {/* Sector 2: Businesses */}
-                <div className="flex flex-col items-center text-center space-y-1.5 border-l border-slate-200/80 pl-2 sm:pl-4">
-                  <div className="w-11 h-11 rounded-2xl bg-white border border-slate-200 shadow-sm flex items-center justify-center text-slate-900">
-                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                    </svg>
-                  </div>
-                  <span className="text-[11px] sm:text-xs font-bold text-slate-700">Businesses</span>
-                </div>
-
-                {/* Sector 3: Shops */}
-                <div className="flex flex-col items-center text-center space-y-1.5 border-l border-slate-200/80 pl-2 sm:pl-4">
-                  <div className="w-11 h-11 rounded-2xl bg-white border border-slate-200 shadow-sm flex items-center justify-center text-slate-900">
-                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-                    </svg>
-                  </div>
-                  <span className="text-[11px] sm:text-xs font-bold text-slate-700">Shops</span>
-                </div>
-
-                {/* Sector 4: Industries */}
-                <div className="flex flex-col items-center text-center space-y-1.5 border-l border-slate-200/80 pl-2 sm:pl-4">
-                  <div className="w-11 h-11 rounded-2xl bg-white border border-slate-200 shadow-sm flex items-center justify-center text-slate-900">
-                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                    </svg>
-                  </div>
-                  <span className="text-[11px] sm:text-xs font-bold text-slate-700">Industries</span>
-                </div>
-
-              </div>
-            </div>
-
           </motion.div>
 
           {/* Right Column (Floating Badges & Interactive Camera Visual Elements) */}
@@ -153,15 +106,6 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Bottom Hero Ticker & Statistics Bar */}
-      <div className="relative z-20 w-full bg-white/95 backdrop-blur-md border-t border-slate-200/80 py-4 sm:py-5 shadow-xs">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-4 text-center lg:text-left">
-            
-
-          </div>
-        </div>
-      </div>
 
       {/* Video Lightbox Modal */}
       <AnimatePresence>

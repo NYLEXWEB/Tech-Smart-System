@@ -80,7 +80,7 @@ export default function FaqSectors() {
   return (
     <section
       id="faq"
-      className="relative py-20 sm:py-28 bg-[#FAF9F5] text-[#111827] border-t border-slate-200/70 w-full max-w-full overflow-hidden select-none"
+      className="relative py-10 sm:py-14 bg-[#FAF9F5] text-[#111827] border-t border-slate-200/70 w-full max-w-full overflow-hidden select-none"
     >
       {/* Decorative Yellow Background Blur Orb */}
       <div className="absolute top-1/4 -right-40 w-96 h-96 bg-[#F5B800]/10 rounded-full blur-3xl pointer-events-none" />
@@ -94,7 +94,7 @@ export default function FaqSectors() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center max-w-3xl mx-auto mb-12 sm:mb-16"
+          className="text-center max-w-3xl mx-auto mb-8 sm:mb-10"
         >
           {/* Eyebrow Badge */}
           <div className="flex items-center justify-center gap-2.5 mb-3">

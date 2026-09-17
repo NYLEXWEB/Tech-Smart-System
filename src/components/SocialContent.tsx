@@ -78,7 +78,7 @@ export default function SocialContent({
   return (
     <section
       id={id}
-      className={`relative w-full overflow-hidden bg-[#FAF9F5] py-10 sm:py-20 select-none ${
+      className={`relative w-full overflow-hidden bg-[#FAF9F5] py-8 sm:py-12 select-none ${
         isStandalone ? "pt-20 sm:pt-28" : ""
       } ${className}`}
     >
@@ -101,7 +101,7 @@ export default function SocialContent({
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
 
         {/* Top Header Composition */}
-        <div className="relative text-center max-w-2xl mx-auto mb-10 sm:mb-16">
+        <div className="relative text-center max-w-2xl mx-auto mb-6 sm:mb-8">
           
           {/* Top Decorative Paper Plane (Left) */}
           <div className="hidden sm:block absolute -top-4 -left-20 lg:-left-28 z-20 pointer-events-none">

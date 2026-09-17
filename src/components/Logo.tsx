@@ -13,13 +13,13 @@ export default function Logo({
   size = "md",
 }: LogoProps) {
   const isDark = variant === "dark";
-  const logoSrc = isDark ? "/images/logo-dark.png" : "/images/logo-light.png";
+  const logoSrc = isDark ? "/images/logo.png" : "/images/logo-light.png";
 
   const heightClass =
     size === "sm"
       ? "h-8 sm:h-9"
       : size === "lg"
-      ? "h-11 sm:h-12 md:h-14"
+      ? "h-13 sm:h-14 md:h-16"
       : "h-9 sm:h-10 md:h-11";
 
   return (

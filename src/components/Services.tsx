@@ -98,7 +98,7 @@ export default function Services() {
   ];
 
   return (
-    <section id="services" className="py-16 sm:py-24 bg-white border-t border-slate-200/70 w-full max-w-full overflow-hidden">
+    <section id="services" className="py-10 sm:py-14 bg-white border-t border-slate-200/70 w-full max-w-full overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         
         {/* Section Header */}
@@ -107,7 +107,7 @@ export default function Services() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.6 }}
-          className="text-center max-w-3xl mx-auto mb-12 sm:mb-16"
+          className="text-center max-w-3xl mx-auto mb-8 sm:mb-10"
         >
           <div className="eyebrow-badge mb-3">
             <span className="eyebrow-bullet" />

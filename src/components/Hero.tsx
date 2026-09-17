@@ -47,8 +47,8 @@ export default function Hero() {
               </span>
             </div>
 
-            {/* Headline H1 (Slimmer Lora Font with strict 1-line per segment) */}
-            <h1 className="font-lora text-[28px] xs:text-[32px] sm:text-4xl md:text-5xl lg:text-[54px] xl:text-[62px] font-semibold text-slate-950 tracking-normal leading-[1.22] sm:leading-[1.18]">
+            {/* Headline H1 (Slim DM Sans Font with strict 1-line per segment) */}
+            <h1 className="font-dmsans text-[28px] xs:text-[32px] sm:text-4xl md:text-5xl lg:text-[54px] xl:text-[62px] font-medium text-slate-950 tracking-tight leading-[1.16] sm:leading-[1.12]">
               <span className="block">Complete</span>
               <span className="block whitespace-nowrap text-[#F5A800]">CCTV Solutions</span>
               <span className="block whitespace-nowrap">for a Safer World</span>
@@ -59,8 +59,8 @@ export default function Hero() {
               Protect what matters with smart security solutions for your home and business. Serving Kollam &amp; all Kerala districts since 1999.
             </p>
 
-            {/* CTA Button Stack (Shifted to right to clear camera) */}
-            <div className="pt-1 sm:pt-2 flex flex-col sm:flex-row items-start sm:items-center gap-2.5 sm:gap-4 w-full md:pl-1 lg:pl-2">
+            {/* CTA Button Stack (Shifted right on mobile to clear left camera) */}
+            <div className="pt-1 sm:pt-2 flex flex-col sm:flex-row items-start sm:items-center gap-2.5 sm:gap-4 w-full pl-7 xs:pl-9 sm:pl-0 md:pl-1 lg:pl-2">
 
               {/* Primary Yellow CTA Button */}
               <Link

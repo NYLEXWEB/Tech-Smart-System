@@ -39,6 +39,8 @@ const config: Config = {
         "4xl": "2rem",
       },
       fontFamily: {
+        dmsans: ["var(--font-dm-sans)", "DM Sans", "sans-serif"],
+        "dm-sans": ["var(--font-dm-sans)", "DM Sans", "sans-serif"],
         lora: ["var(--font-lora)", "Lora", "serif"],
         serif: ["var(--font-lora)", "Lora", "Georgia", "serif"],
         script: ["var(--font-caveat)", "Caveat", "cursive"],

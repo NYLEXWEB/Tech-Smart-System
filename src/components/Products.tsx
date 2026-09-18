@@ -76,25 +76,6 @@ export default function Products() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         {/* Top Header Composition */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center mb-10 sm:mb-12">
-          {/* Top Left Callout (Desktop) */}
-          <div className="hidden lg:block lg:col-span-3 space-y-1 text-left">
-            <div className="flex items-center gap-2 mb-2">
-              <span className="w-6 h-0.5 bg-[#F5B800]" />
-              <span className="text-[11px] font-mono font-bold tracking-[0.2em] text-[#F5B800] uppercase">
-                TRUSTED PRODUCTS
-              </span>
-            </div>
-            <div className="text-2xl font-black text-slate-950 tracking-tight leading-[1.15]">
-              Security.
-              <br />
-              Attendance.
-              <br />
-              Automation.
-            </div>
-            <p className="text-xs text-slate-500 font-medium pt-1">
-              All in One Place.
-            </p>
-          </div>
 
           {/* Center Main Heading & Subtitle */}
           <motion.div
@@ -123,17 +104,6 @@ export default function Products() {
               keep your business safe, smart and efficient.
             </p>
           </motion.div>
-
-          {/* Top Right Handwritten Callout (Desktop) */}
-          <div className="hidden lg:flex lg:col-span-3 justify-end items-center">
-            <div className="font-caveat text-2xl lg:text-3xl font-bold text-slate-400 leading-tight -rotate-6 text-right select-none">
-              Technology
-              <br />
-              for a Better
-              <br />
-              Tomorrow
-            </div>
-          </div>
         </div>
 
         {/* 6 Products Grid (3x2 on desktop, 2x3 on tablet, 1x6 on mobile) */}

@@ -141,7 +141,7 @@ export default function ServicesContent() {
 
       {/* Services List */}
       <section className="py-16 sm:py-24 bg-white border-b border-slate-200/70">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-12">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 divide-y divide-slate-200/80">
           {services.map((service, index) => {
             const isEven = index % 2 === 1;
 
@@ -152,8 +152,7 @@ export default function ServicesContent() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.6, delay: 0.05, ease: "easeOut" }}
-                whileHover={{ y: -4, transition: { duration: 0.2 } }}
-                className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-center p-6 sm:p-10 rounded-3xl bg-slate-50/80 border border-slate-200/90 shadow-sm"
+                className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-center py-10 sm:py-16 first:pt-0 last:pb-0"
               >
                 {/* Content */}
                 <div

@@ -32,7 +32,7 @@ export default function About() {
             </div>
 
             {/* Headline with Brand Yellow Highlight */}
-            <h2 className="text-4xl sm:text-6xl lg:text-7xl text-slate-950 tracking-tight leading-[1.06]">
+            <h2 className="font-dmsans font-medium text-4xl sm:text-6xl lg:text-7xl text-slate-950 tracking-tight leading-[1.06]">
               Building<br />
               A <span className="text-[#F5B800]">Smarter</span><br />
               Tomorrow

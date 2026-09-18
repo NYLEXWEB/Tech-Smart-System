@@ -2,9 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { motion } from "framer-motion";
-import Logo from "./Logo";
 
 interface ProductItem {
   id: number;
@@ -16,38 +14,32 @@ const PRODUCTS: ProductItem[] = [
   {
     id: 1,
     name: "CCTV",
-    image:
-      "https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=600&q=80",
+    image: "/images/products/cctv.jpg",
   },
   {
     id: 2,
     name: "ESSL BIOMETRIC ATTENDANCE SYSTEM",
-    image:
-      "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=600&q=80",
+    image: "/images/products/biometric.jpg",
   },
   {
     id: 3,
     name: "SMART GATE AUTOMATION",
-    image:
-      "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=600&q=80",
+    image: "/images/products/smart-gate.jpg",
   },
   {
     id: 4,
     name: "HOME & OFFICE AUTOMATION",
-    image:
-      "https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=600&q=80",
+    image: "/images/products/home-automation.jpg",
   },
   {
     id: 5,
     name: "DOOR ACCESS CONTROL SYSTEM",
-    image:
-      "https://images.unsplash.com/photo-1526738549149-8e07eca6c147?auto=format&fit=crop&w=600&q=80",
+    image: "/images/products/door-access.png",
   },
   {
     id: 6,
     name: "VIDEO DOOR PHONE",
-    image:
-      "https://images.unsplash.com/photo-1508873696983-2df5703bc20d?auto=format&fit=crop&w=600&q=80",
+    image: "/images/products/video-door-phone.jpg",
   },
 ];
 
@@ -93,7 +85,7 @@ export default function Products() {
             </div>
 
             {/* Main Headline */}
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-950 tracking-tight leading-tight">
+            <h2 className="font-dmsans font-medium text-3xl sm:text-4xl lg:text-5xl text-slate-900 tracking-tight leading-tight">
               Smart Solutions for a<br />
               <span className="text-[#F5B800]">Safer Tomorrow</span>
             </h2>
@@ -115,14 +107,10 @@ export default function Products() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.5, delay: index * 0.08 }}
-              className="relative bg-white rounded-3xl p-6 sm:p-7 shadow-lg shadow-slate-200/50 border border-slate-100 flex flex-col items-center justify-between text-center group hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+              className="relative flex flex-col items-center justify-between text-center group transition-all duration-300 py-2 sm:py-4"
             >
-              {/* Yellow decorative accent tab on right edge */}
-              <span className="absolute right-0 top-1/3 -translate-y-1/2 w-2 h-14 bg-[#F5B800] rounded-l-md pointer-events-none" />
-
-              {/* Product Image on soft warm circular highlight */}
+              {/* Product Image */}
               <div className="relative w-full h-44 sm:h-48 flex items-center justify-center mb-3">
-                <div className="absolute w-36 h-36 sm:w-40 sm:h-40 rounded-full bg-[#FEF3C7]/60 blur-xs -z-0" />
                 <div className="relative z-10 w-full h-full">
                   <Image
                     src={product.image}
@@ -165,96 +153,6 @@ export default function Products() {
               </a>
             </motion.div>
           ))}
-        </div>
-
-        {/* Bottom Section Controls & Trust Badges */}
-        <div className="mt-10 sm:mt-12 pt-6 border-t border-slate-200/70 flex flex-col md:flex-row items-center justify-between gap-6">
-          {/* Bottom Left Logo */}
-          <div className="flex items-center">
-            <Logo variant="dark" size="sm" />
-          </div>
-
-          {/* Bottom Center: View More Products Button */}
-          <div>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-[#F5B800] bg-white hover:bg-amber-50/80 text-slate-900 font-bold text-xs sm:text-sm shadow-xs transition-all group cursor-pointer"
-            >
-              <span>View More Products</span>
-              <span className="text-[#F5B800] font-bold text-sm transform group-hover:translate-x-1 transition-transform">
-                →
-              </span>
-            </Link>
-          </div>
-
-          {/* Bottom Right: 3 Trust Indicators */}
-          <div className="flex items-center gap-6 sm:gap-8 text-center">
-            {/* Trusted Quality */}
-            <div className="flex flex-col items-center gap-1">
-              <div className="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-800">
-                <svg
-                  className="w-4 h-4 text-[#F5B800]"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
-                  />
-                </svg>
-              </div>
-              <span className="text-[11px] font-bold text-slate-700">
-                Trusted Quality
-              </span>
-            </div>
-
-            {/* Expert Support */}
-            <div className="flex flex-col items-center gap-1">
-              <div className="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-800">
-                <svg
-                  className="w-4 h-4 text-[#F5B800]"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
-                  />
-                </svg>
-              </div>
-              <span className="text-[11px] font-bold text-slate-700">
-                Expert Support
-              </span>
-            </div>
-
-            {/* Business Focused */}
-            <div className="flex flex-col items-center gap-1">
-              <div className="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-800">
-                <svg
-                  className="w-4 h-4 text-[#F5B800]"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-                  />
-                </svg>
-              </div>
-              <span className="text-[11px] font-bold text-slate-700">
-                Business Focused
-              </span>
-            </div>
-          </div>
         </div>
       </div>
     </section>

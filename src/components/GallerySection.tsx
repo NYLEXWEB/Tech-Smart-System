@@ -279,7 +279,7 @@ export default function GallerySection() {
           </div>
 
           {/* Title */}
-          <h2 className="text-3xl sm:text-5xl text-slate-900 tracking-tight">
+          <h2 className="font-dmsans font-medium text-3xl sm:text-5xl text-slate-900 tracking-tight">
             Project{" "}
             <span className="text-[#F9B900]">
               Gallery

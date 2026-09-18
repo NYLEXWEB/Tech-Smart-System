@@ -57,7 +57,7 @@ export default function Clients() {
             <span>Track Record & Trust</span>
           </div>
 
-          <h2 className="text-[clamp(1.5rem,2.5vw,2.25rem)] font-bold text-[#111827] tracking-[-0.02em] leading-[1.28] uppercase mb-2">
+          <h2 className="font-dmsans font-medium text-2xl sm:text-4xl text-[#111827] tracking-tight uppercase mb-2">
             Client <span className="text-[#F59E0B] relative inline-block">Experiences & Trust<span className="absolute -bottom-1 left-0 right-0 h-1 bg-[#F59E0B] rounded-full" /></span>
           </h2>
           <p className="text-base font-normal text-[#4B5563] leading-[1.65]">

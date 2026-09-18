@@ -125,7 +125,7 @@ export default function SocialContent({
           </div>
 
           {/* Main Title */}
-          <h2 className="text-3xl sm:text-5xl lg:text-6xl text-slate-950 tracking-tight leading-none mb-2.5">
+          <h2 className="font-dmsans font-medium text-3xl sm:text-5xl lg:text-6xl text-slate-950 tracking-tight leading-none mb-2.5">
             Connect <span className="text-[#F5B800]">With Us</span>
           </h2>
 

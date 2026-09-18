@@ -105,7 +105,7 @@ export default function FaqSectors() {
             <span className="w-8 h-1 bg-[#F5B800] rounded-full" />
           </div>
 
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl text-slate-950 tracking-tight leading-[1.08]">
+          <h2 className="font-dmsans font-medium text-4xl sm:text-5xl lg:text-6xl text-slate-950 tracking-tight leading-[1.08]">
             Frequently Asked{" "}
             <span className="text-[#F5B800] relative inline-block">
               Questions

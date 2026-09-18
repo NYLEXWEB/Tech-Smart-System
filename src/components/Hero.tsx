@@ -12,7 +12,7 @@ export default function Hero() {
 
       {/* Mobile View: Vertical Hero Background */}
       <div
-        className="block md:hidden absolute inset-0 z-0 w-full h-full bg-cover bg-[center_top] bg-no-repeat pointer-events-none"
+        className="block md:hidden absolute inset-0 z-0 w-full h-full bg-cover bg-[center_top] bg-no-repeat bg-fixed pointer-events-none"
         style={{
           backgroundImage: "url('/images/hero-section-mobile.png')",
         }}
@@ -21,7 +21,7 @@ export default function Hero() {
 
       {/* Desktop View: Landscape Hero Camera Background */}
       <div
-        className="hidden md:block absolute inset-0 z-0 w-full h-full bg-cover bg-center bg-no-repeat pointer-events-none"
+        className="hidden md:block absolute inset-0 z-0 w-full h-full bg-cover bg-center bg-no-repeat bg-fixed pointer-events-none"
         style={{
           backgroundImage: "url('/images/hero-section.png')",
         }}

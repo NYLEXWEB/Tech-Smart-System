@@ -114,13 +114,13 @@ export default function Services() {
             <span>What We Offer</span>
           </div>
 
-          <h2 className="text-[clamp(1.5rem,2.5vw,2.25rem)] font-bold text-[#111827] tracking-[-0.02em] leading-[1.28] uppercase">
+          <h2 className="font-dmsans font-medium text-3xl sm:text-4xl text-[#111827] tracking-tight uppercase">
             OUR <span className="text-[#F59E0B] relative inline-block">SERVICES<span className="absolute -bottom-1 left-0 right-0 h-1 bg-[#F59E0B] rounded-full" /></span>
           </h2>
         </motion.div>
 
-        {/* Services Cards List - Generous on Desktop with Short Descriptions */}
-        <div className="space-y-6 sm:space-y-8 max-w-5xl mx-auto w-full">
+        {/* Services List - Clean Layout without card container boxes */}
+        <div className="divide-y divide-slate-200/80 max-w-5xl mx-auto w-full">
           {services.map((service, index) => {
             const isEven = index % 2 === 1;
 
@@ -131,8 +131,7 @@ export default function Services() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.5, delay: 0.05, ease: "easeOut" }}
-                whileHover={{ y: -3, transition: { duration: 0.2 } }}
-                className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center w-full p-5 sm:p-7 lg:p-8 rounded-3xl bg-slate-50/90 border border-slate-200/90 hover:border-slate-300 hover:bg-slate-50 transition-all duration-200 shadow-sm"
+                className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-center w-full py-8 sm:py-12 first:pt-0 last:pb-0"
               >
                 {/* Content Block */}
                 <div

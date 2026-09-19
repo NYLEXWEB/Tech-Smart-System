@@ -13,14 +13,14 @@ export default function Logo({
   size = "md",
 }: LogoProps) {
   const isDark = variant === "dark";
-  const logoSrc = isDark ? "/images/logo.png" : "/images/logo-light.png";
+  const logoSrc = isDark ? "/images/logo-new.png" : "/images/logo-light.png";
 
   const heightClass =
     size === "sm"
-      ? "h-[32px] sm:h-[36px]"
+      ? "h-[36px] sm:h-[40px]"
       : size === "lg"
-      ? "h-[48px] xs:h-[52px] sm:h-[54px] md:h-[58px]"
-      : "h-[40px] xs:h-[44px] sm:h-[46px] md:h-[50px]";
+        ? "h-[54px] xs:h-[62px] sm:h-[68px] md:h-[76px]"
+        : "h-[44px] xs:h-[48px] sm:h-[52px] md:h-[56px]";
 
   return (
     <div className={`relative flex items-center select-none ${className}`}>

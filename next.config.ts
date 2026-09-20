@@ -43,22 +43,6 @@ const nextConfig: NextConfig = {
     ];
   },
 
-  // 301 Permanent Redirects for WWW and canonical URL enforcement
-  async redirects() {
-    return [
-      {
-        source: "/:path*",
-        has: [
-          {
-            type: "host",
-            value: "www.techsmartsystems.co.in",
-          },
-        ],
-        destination: "https://techsmartsystems.co.in/:path*",
-        permanent: true,
-      },
-    ];
-  },
 };
 
 export default nextConfig;

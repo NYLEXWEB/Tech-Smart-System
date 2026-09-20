@@ -21,7 +21,7 @@ export interface ServiceSEOData {
 export const SITE_CONFIG = {
   name: "TechSmart Systems",
   legalName: "Tech Smart Systems",
-  url: "https://techsmartsystems.co.in",
+  url: "https://www.techsmartsystems.co.in",
   tagline: "Think Smart. Stay Secure.",
   foundingYear: 1999,
   address: {

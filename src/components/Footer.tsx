@@ -149,7 +149,7 @@ export default function Footer() {
                 />
               </div>
               <a
-                href="https://maps.google.com/?q=TechSmart+Systems+Asramam+Kollam+Kerala"
+                href="https://g.page/r/CQwMc7jkVInPEBM/review"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block text-[11px] font-semibold text-[#D97706] hover:underline mt-1"

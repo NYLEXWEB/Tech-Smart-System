@@ -3,11 +3,11 @@ import { NextResponse, type NextRequest } from "next/server";
 /**
  * Edge Middleware for Canonical Domain, WWW Redirect & HTTPS Enforcement.
  * 
- * Canonical URL: https://techsmartsystems.co.in
+ * Canonical URL: https://www.techsmartsystems.co.in
  * Redirects:
- * - http://techsmartsystems.co.in -> 301 -> https://techsmartsystems.co.in
- * - http://www.techsmartsystems.co.in -> 301 -> https://techsmartsystems.co.in
- * - https://www.techsmartsystems.co.in -> 301 -> https://techsmartsystems.co.in
+ * - http://techsmartsystems.co.in -> 301 -> https://www.techsmartsystems.co.in
+ * - https://techsmartsystems.co.in -> 301 -> https://www.techsmartsystems.co.in
+ * - http://www.techsmartsystems.co.in -> 301 -> https://www.techsmartsystems.co.in
  */
 export function middleware(request: NextRequest) {
   const host = request.headers.get("host") || "";
@@ -18,18 +18,15 @@ export function middleware(request: NextRequest) {
   const isLocalhost = host.includes("localhost") || host.includes("127.0.0.1") || host.includes("::1");
 
   if (!isLocalhost) {
-    const isWww = host.startsWith("www.");
+    const isApex = host === "techsmartsystems.co.in";
     const isHttp = proto === "http";
 
-    if (isWww || isHttp) {
-      const canonicalHost = "techsmartsystems.co.in";
+    if (isApex || isHttp) {
+      const canonicalHost = "www.techsmartsystems.co.in";
       const redirectUrl = `https://${canonicalHost}${pathname}${search}`;
       
       return NextResponse.redirect(redirectUrl, {
         status: 301,
-        headers: {
-          "Cache-Control": "public, max-age=31536000, immutable",
-        },
       });
     }
   }

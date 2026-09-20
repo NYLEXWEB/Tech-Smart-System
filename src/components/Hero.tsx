@@ -14,7 +14,7 @@ export default function Hero() {
       <div
         className="block md:hidden absolute inset-0 z-0 w-full h-full bg-cover bg-[center_top] bg-no-repeat bg-fixed pointer-events-none"
         style={{
-          backgroundImage: "url('/images/hero-section-mobile.png')",
+          backgroundImage: "url('/images/techsmart-systems-cctv-security-kollam-hero-mobile.png')",
         }}
         aria-hidden="true"
       />
@@ -23,7 +23,7 @@ export default function Hero() {
       <div
         className="hidden md:block absolute inset-0 z-0 w-full h-full bg-cover bg-center bg-no-repeat bg-fixed pointer-events-none"
         style={{
-          backgroundImage: "url('/images/hero-section.png')",
+          backgroundImage: "url('/images/techsmart-systems-cctv-security-kollam-hero.png')",
         }}
         aria-hidden="true"
       />
@@ -43,7 +43,7 @@ export default function Hero() {
             <div className="flex items-center gap-2.5">
               <span className="w-7 sm:w-8 h-1 bg-[#F5A800] rounded-full flex-shrink-0" />
               <span className="text-[10px] xs:text-[11px] sm:text-xs font-mono font-bold tracking-[0.18em] sm:tracking-[0.2em] text-slate-600 uppercase">
-                SECURITY TODAY • A SAFER TOMORROW
+                SECURITY SYSTEMS • KOLLAM, KERALA
               </span>
             </div>
 
@@ -51,12 +51,12 @@ export default function Hero() {
             <h1 className="font-dmsans text-[28px] xs:text-[32px] sm:text-4xl md:text-5xl lg:text-[54px] xl:text-[62px] font-medium text-slate-950 tracking-tight leading-[1.16] sm:leading-[1.12]">
               <span className="block">Complete</span>
               <span className="block whitespace-nowrap text-[#F5A800]">CCTV Solutions</span>
-              <span className="block whitespace-nowrap">for a Safer World</span>
+              <span className="block whitespace-nowrap">in Kollam, Kerala</span>
             </h1>
 
             {/* Narrative Subtitle */}
             <p className="text-[12px] xs:text-[13px] sm:text-base text-slate-600 font-normal leading-relaxed max-w-[290px] xs:max-w-[320px] sm:max-w-lg">
-              Protect what matters with smart security solutions for your home and business. Serving Kollam &amp; all Kerala districts since 1999.
+              TechSmart Systems engineers dependable CCTV surveillance, biometric access control, and smart automation for homes and businesses across all Kerala districts since 1999.
             </p>
 
             {/* CTA Button Stack (Shifted right on mobile to clear left camera) */}
@@ -76,6 +76,7 @@ export default function Hero() {
               {/* Watch Video Secondary Button */}
               <button
                 onClick={() => setIsVideoOpen(true)}
+                aria-label="Watch TechSmart Systems Video Overview"
                 className="w-[200px] xs:w-[215px] sm:w-auto inline-flex items-center justify-start gap-3 px-4.5 py-2.5 rounded-full bg-[#F1F5F9]/90 sm:bg-white/95 backdrop-blur-md border border-slate-200/60 shadow-xs hover:shadow-sm active:scale-[0.98] text-slate-900 font-bold text-xs sm:text-sm transition-all cursor-pointer group"
               >
                 <div className="w-6 h-6 rounded-full bg-slate-950 text-white flex items-center justify-center shadow-xs group-hover:scale-105 transition-transform">
@@ -117,6 +118,7 @@ export default function Hero() {
                 <h3 className="text-sm font-bold text-white">TechSmart Systems Security Overview</h3>
                 <button
                   onClick={() => setIsVideoOpen(false)}
+                  aria-label="Close Video"
                   className="w-8 h-8 rounded-full bg-slate-800 text-slate-400 hover:text-white flex items-center justify-center font-bold text-sm"
                 >
                   ✕
@@ -140,4 +142,3 @@ export default function Hero() {
     </section>
   );
 }
-

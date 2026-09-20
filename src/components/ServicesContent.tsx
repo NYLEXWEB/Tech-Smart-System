@@ -10,6 +10,7 @@ export default function ServicesContent() {
   const services = [
     {
       number: "01",
+      slug: "cctv-installation",
       title: "CCTV Surveillance",
       description:
         "Comprehensive 24/7 video surveillance architecture designed for maximum visibility. Featuring color night vision, ultra-high-definition 4K resolution, AI-powered human/vehicle classification, smart perimeter tripwires, and vandal-proof dome and bullet cameras.",
@@ -19,10 +20,12 @@ export default function ServicesContent() {
         "AI human detection & license plate recognition",
         "Weatherproof IP67 rated outdoor housings",
       ],
-      image: "/images/services/cctv.jpg",
+      image: "/images/services/cctv-camera-installation-surveillance-kollam.jpg",
+      alt: "CCTV Camera Installation and Surveillance in Kollam, Kerala",
     },
     {
       number: "02",
+      slug: "security-systems",
       title: "Security Systems & Integration",
       description:
         "Integrated multi-layered defense solutions engineered specifically around customer site layout. We combine intrusion alarms, glass break sensors, motion detection beams, and automated sirens into a unified command dashboard.",
@@ -32,10 +35,12 @@ export default function ServicesContent() {
         "Automated GSM/SMS & smartphone alarm alerts",
         "Centralized alarm panel integration",
       ],
-      image: "/images/services/security-systems.jpg",
+      image: "/images/services/electronic-security-systems-alarm-solutions.jpg",
+      alt: "Security Systems and Intrusion Alarms in Kerala",
     },
     {
       number: "03",
+      slug: "dvr-nvr",
       title: "DVR & NVR Storage",
       description:
         "Enterprise-grade network video recording (NVR) and digital video recording (DVR) stations. Designed with continuous RAID redundancy, expandable surveillance hard drives, and intelligent motion-triggered archiving for rapid footage playback.",
@@ -45,10 +50,12 @@ export default function ServicesContent() {
         "Surveillance-grade 24/7 continuous duty hard disks",
         "Synchronized multi-channel instant playback search",
       ],
-      image: "/images/services/dvr-nvr.jpg",
+      image: "/images/services/dvr-nvr-cctv-video-storage-systems.jpg",
+      alt: "DVR and NVR Storage Systems in Kollam",
     },
     {
       number: "04",
+      slug: "home-automation",
       title: "Home Automation",
       description:
         "Modern smart home automation controls enabling effortless management of lighting scenes, motorized security gates, air conditioning, home theaters, and appliances via sleek wall touch panels or mobile smartphone apps.",
@@ -58,10 +65,12 @@ export default function ServicesContent() {
         "Voice assistant integration (Google Home & Alexa)",
         "Energy monitoring and remote appliance switching",
       ],
-      image: "/images/services/home-automation.jpg",
+      image: "/images/services/smart-home-automation-lighting-iot-kerala.jpg",
+      alt: "Smart Home Automation Systems in Kerala",
     },
     {
       number: "05",
+      slug: "access-control",
       title: "Access Control",
       description:
         "Strict restricted entry management systems for offices, commercial warehouses, institutions, and premium residences. Equipped with biometric fingerprint readers, electronic smart door locks, keycard RFID gateways, and visitor intercoms.",
@@ -71,10 +80,12 @@ export default function ServicesContent() {
         "Audio/video smart doorbell and intercom systems",
         "Time-restricted guest and employee access logs",
       ],
-      image: "/images/services/access-control.jpg",
+      image: "/images/services/door-access-control-biometric-smart-locks.jpg",
+      alt: "Door Access Control and Smart Locks Kollam",
     },
     {
       number: "06",
+      slug: "biometric-attendance",
       title: "Biometric Systems",
       description:
         "High-accuracy biometric time-attendance and identity verification terminals. Built for transparent workforce management, shift scheduling, payroll export integration, and high-security access verification.",
@@ -84,10 +95,12 @@ export default function ServicesContent() {
         "Cloud-based attendance reporting & payroll sync",
         "Battery backup support for uninterrupted logging",
       ],
-      image: "/images/services/biometrics.jpg",
+      image: "/images/services/biometric-attendance-time-tracking-systems.jpg",
+      alt: "Biometric Time Attendance and Face Recognition Systems Kerala",
     },
     {
       number: "07",
+      slug: "remote-monitoring",
       title: "Remote Monitoring",
       description:
         "Seamless live camera feed streaming and instant security alerts directly on your iOS and Android smartphones from anywhere in the world. Features two-way audio talk, real-time push notifications, and fast cloud playback.",
@@ -97,10 +110,12 @@ export default function ServicesContent() {
         "Two-way audio communication through camera speakers",
         "Multi-user and family permission sharing",
       ],
-      image: "/images/services/remote-monitoring.jpg",
+      image: "/images/services/remote-cctv-live-monitoring-mobile-app.jpg",
+      alt: "Remote CCTV Monitoring on Mobile Phone Kerala",
     },
     {
       number: "08",
+      slug: "cctv-maintenance-amc",
       title: "Installation & Service Maintenance",
       description:
         "Professional structured cabling, camera mounting, network routing, firmware updates, and comprehensive Annual Maintenance Contracts (AMC) executed by our experienced engineering technicians across all Kerala districts.",
@@ -110,7 +125,38 @@ export default function ServicesContent() {
         "Annual Maintenance Contracts (AMC) & rapid repairs",
         "Fast on-site technical support across Kerala",
       ],
-      image: "/images/services/installation.jpg",
+      image: "/images/services/cctv-maintenance-amc-repair-services-kerala.jpg",
+      alt: "CCTV Maintenance Repair and AMC Services Kerala",
+    },
+    {
+      number: "09",
+      slug: "gate-automation",
+      title: "Automatic Gate Automation",
+      description:
+        "Heavy-duty motorized automatic sliding and swing gate systems for residences, gated communities, and industrial estates with wireless remote keyfob and safety photobeam sensors.",
+      features: [
+        "Heavy-duty Italian sliding gate motors (400kg to 2000kg)",
+        "Dual & single swing gate motorized arms",
+        "Infrared safety anti-crush photobeams",
+        "Mobile smartphone & remote keyfob controls",
+      ],
+      image: "/images/products/automatic-motorized-sliding-swing-gate.jpg",
+      alt: "Automatic Gate Automation in Kollam Kerala",
+    },
+    {
+      number: "10",
+      slug: "video-door-phone",
+      title: "Video Door Phone Systems",
+      description:
+        "Color touchscreen indoor monitors and weatherproof outdoor doorbell cameras with two-way audio talkback, smartphone call forwarding, and one-touch gate unlocking.",
+      features: [
+        "7-inch to 10-inch color touchscreen displays",
+        "Wide-angle 1080p camera with night vision",
+        "One-touch electronic door & gate release",
+        "Real-time mobile smartphone call forwarding",
+      ],
+      image: "/images/products/ip-video-door-phone-intercom-display.jpg",
+      alt: "Video Door Phone and Intercom Systems Kerala",
     },
   ];
 
@@ -126,15 +172,15 @@ export default function ServicesContent() {
         >
           <div className="eyebrow-badge mb-3">
             <span className="eyebrow-bullet" />
-            <span>Engineering Capabilities</span>
+            <span>Engineering Capabilities • 25+ Years Legacy</span>
           </div>
 
           <h1 className="text-[clamp(2.25rem,4vw,3.25rem)] font-bold text-[#111827] tracking-[-0.028em] leading-[1.18] mb-4">
-            Security & Automation Services
+            Security &amp; Automation Services
           </h1>
 
           <p className="text-base font-normal text-[#4B5563] max-w-2xl mx-auto leading-[1.65]">
-            Engineered for reliability, long-term durability, and seamless everyday control across residences, businesses, and institutions.
+            Engineered for reliability, long-term durability, and seamless everyday control across residences, businesses, and institutions throughout Kerala.
           </p>
         </motion.div>
       </section>
@@ -167,7 +213,12 @@ export default function ServicesContent() {
                   </div>
 
                   <h2 className="text-[clamp(1.35rem,2.2vw,1.75rem)] font-semibold text-[#111827] tracking-[-0.02em] leading-[1.28]">
-                    {service.title}
+                    <Link
+                      href={`/services/${service.slug}`}
+                      className="hover:text-[#D97706] transition-colors"
+                    >
+                      {service.title}
+                    </Link>
                   </h2>
 
                   <p className="text-sm sm:text-base text-[#4B5563] leading-[1.65] font-normal">
@@ -188,21 +239,30 @@ export default function ServicesContent() {
                   <div className="block lg:hidden w-full aspect-[16/10] rounded-2xl overflow-hidden bg-slate-100 relative shadow-sm my-3">
                     <Image
                       src={service.image}
-                      alt={service.title}
+                      alt={service.alt}
                       fill
                       className="object-cover"
                       sizes="100vw"
                     />
                   </div>
 
-                  <div className="pt-3 flex items-center gap-3">
+                  <div className="pt-3 flex flex-wrap items-center gap-2.5">
+                    <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.96 }}>
+                      <Link
+                        href={`/services/${service.slug}`}
+                        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#111827] hover:bg-slate-800 text-white text-xs font-semibold tracking-wider uppercase transition-colors shadow-sm"
+                      >
+                        <span>View Details</span>
+                        <span>→</span>
+                      </Link>
+                    </motion.div>
+
                     <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.96 }}>
                       <Link
                         href="/contact"
-                        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#111827] hover:bg-slate-800 text-white text-xs font-semibold tracking-wider uppercase transition-colors"
+                        className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-900 text-xs font-semibold tracking-wide transition-colors border border-slate-200"
                       >
-                        <span>Request Free Quote</span>
-                        <span>→</span>
+                        <span>Get Quote</span>
                       </Link>
                     </motion.div>
 
@@ -230,15 +290,18 @@ export default function ServicesContent() {
                     isEven ? "lg:order-1" : "lg:order-2"
                   }`}
                 >
-                  <div className="relative aspect-[16/10] w-full rounded-2xl overflow-hidden bg-slate-100 shadow-sm group">
+                  <Link
+                    href={`/services/${service.slug}`}
+                    className="block relative aspect-[16/10] w-full rounded-2xl overflow-hidden bg-slate-100 shadow-sm group"
+                  >
                     <Image
                       src={service.image}
-                      alt={service.title}
+                      alt={service.alt}
                       fill
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                       sizes="(max-width: 1024px) 100vw, 550px"
                     />
-                  </div>
+                  </Link>
                 </div>
               </motion.div>
             );

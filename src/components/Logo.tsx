@@ -27,7 +27,7 @@ export default function Logo({
       <div className={`relative ${heightClass} aspect-[430/154] w-auto`}>
         <Image
           src={logoSrc}
-          alt="TechSmart Systems Logo"
+          alt="TechSmart Systems - CCTV & Security Solutions Kollam Kerala"
           fill
           priority
           className="object-contain object-left"

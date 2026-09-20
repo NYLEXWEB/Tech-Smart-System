@@ -18,49 +18,49 @@ const ALL_PROJECTS: ProjectItem[] = [
     id: 1,
     title: "CCTV Security Installation",
     category: "CCTV",
-    subtitle: "Enterprise Surveillance ",
-    description: "Advanced security solutions for a safer tomorrow.",
-    image: "/gallery images/file_00000000147c81fd884ccb9651e01277.png",
+    subtitle: "Enterprise Surveillance",
+    description: "Advanced 4K HD security surveillance camera installation in Kerala.",
+    image: "/images/gallery/cctv-security-camera-installation-kollam.png",
   },
   {
     id: 2,
     title: "IT Infrastructure Setup",
     category: "IT & Networking",
     subtitle: "High-Speed Server Racks",
-    description: "Structured high-speed network cabling and server enclosures.",
-    image: "/gallery images/file_00000000166c8207bec4b0a249a44104.png",
+    description: "Structured high-speed network cabling and server enclosures in Kollam.",
+    image: "/images/gallery/it-infrastructure-server-rack-networking.png",
   },
   {
     id: 3,
     title: "Solar Panel Installation",
     category: "Solar Systems",
-    subtitle: "Renewable Power",
+    subtitle: "Renewable Power Backup",
     description: "Clean photovoltaic solar energy grid for luxury commercial estates.",
-    image: "/gallery images/file_000000002db0820bae62eb1507370f91.png",
+    image: "/images/gallery/commercial-solar-power-backup-system.png",
   },
   {
     id: 4,
     title: "Networking Solutions",
     category: "IT & Networking",
     subtitle: "Data Center Cabling",
-    description: "Enterprise gigabit network routing and optical fiber links.",
-    image: "/gallery images/file_0000000071908230a1812b932b38cdac.png",
+    description: "Enterprise gigabit network routing and optical fiber links across Kerala.",
+    image: "/images/gallery/enterprise-data-center-network-cabling.png",
   },
   {
     id: 5,
     title: "Commercial Installations",
     category: "Office Setups",
     subtitle: "Corporate Facilities",
-    description: "Integrated biometric access control and smart lighting systems.",
-    image: "/gallery images/file_00000000861481fa87e8305b6a1d16f9.png",
+    description: "Integrated biometric access control and smart lighting systems in Kollam.",
+    image: "/images/gallery/commercial-biometric-access-control-setup.png",
   },
   {
     id: 6,
     title: "Enterprise Surveillance Hub",
     category: "CCTV",
     subtitle: "24/7 AI Analytics",
-    description: "Centralized multi-channel security video wall with instant alerts.",
-    image: "/gallery images/file_000000009e6c820b876226568d79d590.png",
+    description: "Centralized multi-channel security video wall with instant mobile alerts.",
+    image: "/images/gallery/enterprise-cctv-surveillance-monitoring-hub.png",
   },
   {
     id: 7,
@@ -68,23 +68,23 @@ const ALL_PROJECTS: ProjectItem[] = [
     category: "Office Setups",
     subtitle: "Touchless Control",
     description: "Automated climate, gate entry, and smart conference room systems.",
-    image: "/gallery images/file_00000000a1b0820b90817e89e2a264e0.png",
+    image: "/images/gallery/smart-office-automation-conference-controls.png",
   },
   {
     id: 8,
     title: "Solar Rooftop Grid",
     category: "Solar Systems",
     subtitle: "Eco Energy Backup",
-    description: "High-efficiency solar array for zero-downtime operations.",
-    image: "/gallery images/file_00000000c2f481fa8f4ec17b9e0da5a6.png",
+    description: "High-efficiency solar array for zero-downtime security operations.",
+    image: "/images/gallery/rooftop-solar-grid-installation-kerala.png",
   },
   {
     id: 9,
     title: "4K Night Vision CCTV",
     category: "CCTV",
     subtitle: "Perimeter Protection",
-    description: "Ultra HD infrared dome cameras for complete night security.",
-    image: "/gallery images/file_00000000dc8081fab82a939838de5979.png",
+    description: "Ultra HD infrared dome cameras for complete residential night security.",
+    image: "/images/gallery/ultra-hd-4k-night-vision-cctv-camera.png",
   },
   {
     id: 10,
@@ -92,7 +92,7 @@ const ALL_PROJECTS: ProjectItem[] = [
     category: "Office Setups",
     subtitle: "Facial Recognition",
     description: "Touchless staff attendance and electronic smart lock gateways.",
-    image: "/gallery images/file_00000000eac0820ba00e332ce159e6a5.png",
+    image: "/images/gallery/biometric-facial-recognition-smart-locks.png",
   },
 ];
 
@@ -182,7 +182,7 @@ function MobileGalleryRow({
         >
           <Image
             src={item.image}
-            alt={item.title}
+            alt={`${item.title} - ${item.subtitle} | TechSmart Systems Kerala`}
             fill
             sizes="260px"
             className="object-cover group-hover:scale-105 transition-transform duration-300"
@@ -288,7 +288,7 @@ export default function GallerySection() {
 
           {/* Subtitle */}
           <p className="text-xs sm:text-sm text-slate-600 font-medium leading-relaxed">
-            A glimpse of the solutions we build, install and support.<br className="hidden sm:inline" /> Real projects. Real impact.
+            A glimpse of the solutions we build, install and support across Kerala.<br className="hidden sm:inline" /> Real projects. Real impact.
           </p>
         </motion.div>
 
@@ -313,7 +313,7 @@ export default function GallerySection() {
               >
                 <Image
                   src={getProjectAtOffset(-2)!.image}
-                  alt={getProjectAtOffset(-2)!.title}
+                  alt={`${getProjectAtOffset(-2)!.title} - ${getProjectAtOffset(-2)!.subtitle} | TechSmart Systems Kerala`}
                   fill
                   sizes="220px"
                   className="object-cover group-hover:scale-105 transition-transform"
@@ -333,7 +333,7 @@ export default function GallerySection() {
               >
                 <Image
                   src={getProjectAtOffset(-1)!.image}
-                  alt={getProjectAtOffset(-1)!.title}
+                  alt={`${getProjectAtOffset(-1)!.title} - ${getProjectAtOffset(-1)!.subtitle} | TechSmart Systems Kerala`}
                   fill
                   sizes="260px"
                   className="object-cover group-hover:scale-105 transition-transform"
@@ -354,7 +354,7 @@ export default function GallerySection() {
               >
                 <Image
                   src={currentProject.image}
-                  alt={currentProject.title}
+                  alt={`${currentProject.title} - ${currentProject.subtitle} | TechSmart Systems Kerala`}
                   fill
                   sizes="(max-width: 1024px) 640px, 780px"
                   className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
@@ -375,7 +375,7 @@ export default function GallerySection() {
               >
                 <Image
                   src={getProjectAtOffset(1)!.image}
-                  alt={getProjectAtOffset(1)!.title}
+                  alt={`${getProjectAtOffset(1)!.title} - ${getProjectAtOffset(1)!.subtitle} | TechSmart Systems Kerala`}
                   fill
                   sizes="260px"
                   className="object-cover group-hover:scale-105 transition-transform"
@@ -395,7 +395,7 @@ export default function GallerySection() {
               >
                 <Image
                   src={getProjectAtOffset(2)!.image}
-                  alt={getProjectAtOffset(2)!.title}
+                  alt={`${getProjectAtOffset(2)!.title} - ${getProjectAtOffset(2)!.subtitle} | TechSmart Systems Kerala`}
                   fill
                   sizes="220px"
                   className="object-cover group-hover:scale-105 transition-transform"
@@ -411,7 +411,7 @@ export default function GallerySection() {
           <button
             onClick={prevSlide}
             className="w-10 h-10 rounded-full bg-white border border-slate-200 text-slate-800 hover:bg-[#F9B900] hover:text-slate-950 hover:border-amber-400 shadow-sm flex items-center justify-center transition-all cursor-pointer font-bold text-lg"
-            aria-label="Previous Project"
+            aria-label="Previous Project Slide"
           >
             ‹
           </button>
@@ -434,7 +434,7 @@ export default function GallerySection() {
           <button
             onClick={nextSlide}
             className="w-10 h-10 rounded-full bg-white border border-slate-200 text-slate-800 hover:bg-[#F9B900] hover:text-slate-950 hover:border-amber-400 shadow-sm flex items-center justify-center transition-all cursor-pointer font-bold text-lg"
-            aria-label="Next Project"
+            aria-label="Next Project Slide"
           >
             ›
           </button>
@@ -442,14 +442,12 @@ export default function GallerySection() {
 
         {/* Dedicated Mobile View: 2 Auto-Scrolling Lines with Touch Drag Control */}
         <div className="sm:hidden w-full space-y-3.5 my-2">
-          {/* Top Line: Auto-scrolling Left */}
           <MobileGalleryRow
             items={mobileRow1}
             direction="left"
             onItemClick={(item) => setModalProject(item)}
           />
 
-          {/* Bottom Line: Auto-scrolling Right */}
           <MobileGalleryRow
             items={mobileRow2}
             direction="right"
@@ -475,6 +473,7 @@ export default function GallerySection() {
             >
               <button
                 onClick={() => setModalProject(null)}
+                aria-label="Close Lightbox Modal"
                 className="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/20 hover:bg-white text-white hover:text-black flex items-center justify-center text-lg font-bold transition-all cursor-pointer z-10"
               >
                 ✕
@@ -483,11 +482,20 @@ export default function GallerySection() {
               <div className="relative aspect-[16/10] w-full rounded-lg overflow-hidden bg-slate-950">
                 <Image
                   src={modalProject.image}
-                  alt={modalProject.title}
+                  alt={`${modalProject.title} - ${modalProject.subtitle} | TechSmart Systems Kerala`}
                   fill
                   className="object-contain"
                   quality={100}
                 />
+              </div>
+
+              <div className="text-left space-y-1">
+                <h3 className="text-lg font-bold text-white">
+                  {modalProject.title}
+                </h3>
+                <p className="text-xs text-slate-400">
+                  {modalProject.description}
+                </p>
               </div>
             </div>
           </motion.div>

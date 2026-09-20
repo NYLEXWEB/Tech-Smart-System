@@ -30,9 +30,10 @@ export default function Navbar() {
     { name: "Home", href: "/" },
     { name: "About", href: "/about" },
     { name: "Services", href: "/services" },
+    { name: "Products", href: "/products" },
     { name: "Brands", href: "/brands" },
+    { name: "Gallery", href: "/gallery" },
     { name: "Clients", href: "/clients" },
-    { name: "Social", href: "/social" },
     { name: "Contact", href: "/contact" },
   ];
 
@@ -41,7 +42,7 @@ export default function Navbar() {
       <header
         className={`fixed left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
-            ? "top-2.5 sm:top-4 max-w-6xl mx-3 sm:mx-auto rounded-2xl sm:rounded-full bg-white/95 backdrop-blur-md shadow-md border border-slate-200/90 py-1.5 sm:py-2 px-3.5 sm:px-8"
+            ? "top-2 sm:top-3.5 max-w-6xl mx-3 sm:mx-auto rounded-2xl sm:rounded-full bg-white/95 backdrop-blur-md shadow-md border border-slate-200/90 py-1.5 sm:py-2 px-3.5 sm:px-6"
             : mobileMenuOpen
             ? "top-0 bg-white shadow-md py-2.5 px-4 sm:px-8 border-b border-slate-200"
             : "top-0 bg-transparent py-2.5 sm:py-4 px-4 sm:px-8 border-transparent"
@@ -50,11 +51,14 @@ export default function Navbar() {
         <div className={`${isScrolled ? "w-full" : "max-w-7xl mx-auto"} flex items-center justify-between`}>
           {/* Logo */}
           <Link href="/" className="flex items-center" onClick={() => setMobileMenuOpen(false)}>
-            <Logo variant="dark" size="lg" />
+            <Logo variant="dark" size="md" />
           </Link>
 
           {/* Center Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-7 lg:space-x-9">
+          <nav
+            aria-label="Main Navigation"
+            className="hidden md:flex items-center space-x-5 lg:space-x-7"
+          >
             {navLinks.map((link) => {
               const isActive =
                 link.href === "/"
@@ -65,9 +69,9 @@ export default function Navbar() {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className={`text-sm transition-colors duration-150 relative py-1 ${
+                  className={`text-xs lg:text-[13px] transition-colors duration-150 relative py-1 ${
                     isActive
-                      ? "text-[#111827] font-semibold"
+                      ? "text-[#111827] font-bold"
                       : "text-[#4B5563] hover:text-[#111827] font-medium"
                   }`}
                 >
@@ -89,7 +93,7 @@ export default function Navbar() {
             <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.96 }}>
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.08em] text-slate-950 bg-brand-yellow hover:bg-brand-yellow-hover rounded-full transition-all duration-200 shadow-sm"
+                className="inline-flex items-center justify-center px-4.5 py-2 text-xs font-semibold uppercase tracking-[0.08em] text-slate-950 bg-brand-yellow hover:bg-brand-yellow-hover rounded-full transition-all duration-200 shadow-sm"
               >
                 Get a Quote
               </Link>
@@ -100,14 +104,14 @@ export default function Navbar() {
           <div className="flex md:hidden items-center space-x-2">
             <Link
               href="/contact"
-              className="inline-flex items-center px-3.5 py-1.5 text-xs font-bold uppercase tracking-[0.08em] text-slate-950 bg-brand-yellow hover:bg-brand-yellow-hover rounded-full shadow-sm transition-all"
+              className="inline-flex items-center px-3 py-1.5 text-xs font-bold uppercase tracking-[0.08em] text-slate-950 bg-brand-yellow hover:bg-brand-yellow-hover rounded-full shadow-sm transition-all"
             >
               Quote
             </Link>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="p-2 rounded-xl text-slate-700 hover:text-slate-950 hover:bg-slate-100 transition-colors"
-              aria-label="Toggle Navigation"
+              aria-label="Toggle Navigation Menu"
               aria-expanded={mobileMenuOpen}
             >
               {mobileMenuOpen ? (

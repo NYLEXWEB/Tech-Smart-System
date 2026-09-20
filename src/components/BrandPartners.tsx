@@ -7,27 +7,33 @@ import { motion } from "framer-motion";
 const BRANDS = [
   {
     name: "Hikvision",
-    logo: "/images/brands/hikvision.png",
+    logo: "/images/brands/hikvision-cctv-security-partner.png",
+    alt: "Hikvision CCTV cameras and video surveillance systems partner",
   },
   {
     name: "CP PLUS",
-    logo: "/images/brands/cpplus.png",
+    logo: "/images/brands/cp-plus-cctv-surveillance-partner.png",
+    alt: "CP PLUS security cameras and DVR NVR recording solutions partner",
   },
   {
     name: "Matrix Security Solutions",
-    logo: "/images/brands/matrix.png",
+    logo: "/images/brands/matrix-telecom-security-partner.png",
+    alt: "Matrix Security Solutions biometric access control and IP surveillance partner",
   },
   {
     name: "UNV (Uniview)",
-    logo: "/images/brands/unv.png",
+    logo: "/images/brands/unv-uniview-cctv-security-partner.png",
+    alt: "UNV Uniview high definition IP camera solutions partner",
   },
   {
     name: "Prama",
-    logo: "/images/brands/prama.png",
+    logo: "/images/brands/prama-india-cctv-partner.png",
+    alt: "Prama indigenous CCTV security cameras and surveillance partner",
   },
   {
     name: "HiFocus",
-    logo: "/images/brands/hifocus.png",
+    logo: "/images/brands/hifocus-cctv-security-partner.png",
+    alt: "HiFocus electronic security and CCTV surveillance systems partner",
   },
 ];
 
@@ -62,7 +68,7 @@ export default function BrandPartners() {
               <div className="relative w-full h-full max-w-[150px] flex items-center justify-center">
                 <Image
                   src={brand.logo}
-                  alt={`${brand.name} logo`}
+                  alt={brand.alt}
                   fill
                   sizes="(max-width: 640px) 150px, 200px"
                   className="object-contain"

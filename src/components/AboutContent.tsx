@@ -11,13 +11,13 @@ export default function AboutContent() {
       year: "1999",
       title: "Company Founded in Kollam",
       description:
-        "TechSmart Systems established its foundation in Kollam, Kerala, delivering high-reliability security systems and analog surveillance solutions.",
+        "TechSmart Systems established its foundation in Asramam, Kollam, Kerala, delivering high-reliability security systems and analog surveillance solutions.",
     },
     {
       year: "2002",
       title: "Kollam District Police CCTV Project",
       description:
-        "Executed the milestone city surveillance project for Kollam District Police across Kollam Railway Station, KSRTC, and Private Bus Stands.",
+        "Executed the milestone city surveillance project for Kollam District Police across Kollam Railway Station, KSRTC Bus Terminal, and Private Bus Stands.",
     },
     {
       year: "2010",
@@ -79,7 +79,7 @@ export default function AboutContent() {
             >
               <div className="eyebrow-badge">
                 <span className="eyebrow-bullet" />
-                <span>Our Heritage & Mission</span>
+                <span>Our Heritage &amp; Mission</span>
               </div>
 
               <h2 className="text-[clamp(1.35rem,2.2vw,1.75rem)] font-semibold text-[#111827] tracking-[-0.02em] leading-[1.28] mb-2">
@@ -132,8 +132,8 @@ export default function AboutContent() {
               <div className="p-3 rounded-2xl sm:rounded-3xl bg-slate-50 border border-slate-200 shadow-sm overflow-hidden group">
                 <div className="relative aspect-[4/3] sm:aspect-[4/5] w-full rounded-xl sm:rounded-2xl overflow-hidden bg-slate-100">
                   <Image
-                    src="/images/about-security.jpg"
-                    alt="TechSmart Systems Hardware Engineering Showcase"
+                    src="/images/about/cctv-security-surveillance-engineering-kerala.jpg"
+                    alt="TechSmart Systems Hardware Engineering and CCTV Surveillance Standards Kollam Kerala"
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                     sizes="(max-width: 1024px) 100vw, 500px"

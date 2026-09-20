@@ -12,11 +12,56 @@ export default function Contact() {
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [mailLinks, setMailLinks] = useState({ gmailUrl: "", mailtoUrl: "", whatsappUrl: "" });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.name || !formData.phone) return;
+
+    const subject = `New Inquiry: ${formData.service} - ${formData.name}`;
+    const body = `Hello TechSmart Systems Team,
+
+I would like to request a quote / inquiry for ${formData.service}.
+
+--- CUSTOMER & PROJECT DETAILS ---
+• Name: ${formData.name}
+• Phone: ${formData.phone}
+• Email: ${formData.email || "Not provided"}
+• Service Required: ${formData.service}
+
+• Property Location & Requirements:
+${formData.message || "Please contact me to discuss property requirements and site evaluation."}
+
+---
+Inquiry submitted via TechSmart Systems Website (https://techsmartsystems.co.in)
+`;
+
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=techsmartsystemskollam@gmail.com&su=${encodeURIComponent(
+      subject
+    )}&body=${encodeURIComponent(body)}`;
+
+    const mailtoUrl = `mailto:techsmartsystemskollam@gmail.com?subject=${encodeURIComponent(
+      subject
+    )}&body=${encodeURIComponent(body)}`;
+
+    const whatsappText = `Hello TechSmart Systems, my name is ${formData.name}. I am inquiring about ${formData.service}.\nPhone: ${formData.phone}${
+      formData.email ? `\nEmail: ${formData.email}` : ""
+    }\nDetails: ${formData.message || "Please contact me for site survey."}`;
+
+    const whatsappUrl = `https://wa.me/919048171666?text=${encodeURIComponent(whatsappText)}`;
+
+    setMailLinks({ gmailUrl, mailtoUrl, whatsappUrl });
     setSubmitted(true);
+
+    // Redirect / open Gmail composer in a new tab
+    try {
+      const opened = window.open(gmailUrl, "_blank", "noopener,noreferrer");
+      if (!opened) {
+        window.location.href = mailtoUrl;
+      }
+    } catch {
+      window.location.href = mailtoUrl;
+    }
   };
 
   return (
@@ -115,25 +160,60 @@ export default function Contact() {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.95 }}
                   transition={{ duration: 0.3 }}
-                  className="p-8 rounded-2xl bg-white border border-slate-200 text-center space-y-3 shadow-sm"
+                  className="p-6 sm:p-8 rounded-2xl bg-white border border-slate-200 text-center space-y-4 shadow-sm"
                 >
-                  <div className="w-12 h-12 rounded-full bg-[#F59E0B]/20 text-[#111827] flex items-center justify-center mx-auto text-lg font-bold">
+                  <div className="w-14 h-14 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center mx-auto text-2xl font-bold">
                     ✓
                   </div>
-                  <div className="text-base font-semibold text-[#111827]">
-                    Inquiry Submitted Successfully
+                  <div>
+                    <div className="text-lg font-bold text-[#111827]">
+                      Redirecting to Gmail...
+                    </div>
+                    <p className="text-sm text-[#4B5563] max-w-md mx-auto leading-relaxed mt-1">
+                      Thank you, <strong>{formData.name}</strong>. Your enquiry details have been pre-formatted for <strong>techsmartsystemskollam@gmail.com</strong>.
+                    </p>
                   </div>
-                  <p className="text-sm text-[#4B5563] max-w-sm mx-auto leading-[1.65]">
-                    Thank you, <strong>{formData.name}</strong>. Our engineering team in Kollam will connect with you at <strong>{formData.phone}</strong>.
-                  </p>
-                  <motion.button
-                    whileHover={{ scale: 1.03 }}
-                    whileTap={{ scale: 0.97 }}
-                    onClick={() => setSubmitted(false)}
-                    className="mt-4 px-6 py-2.5 text-xs font-semibold text-slate-950 bg-brand-yellow rounded-full shadow-sm"
-                  >
-                    Send Another Inquiry
-                  </motion.button>
+
+                  {/* Direct Action Links */}
+                  <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
+                    <a
+                      href={mailLinks.gmailUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-[#EA4335] hover:bg-[#D93025] text-white text-xs font-bold tracking-wide transition-all shadow-sm"
+                    >
+                      <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                      </svg>
+                      <span>Open in Gmail</span>
+                    </a>
+
+                    <a
+                      href={mailLinks.whatsappUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-[#25D366] hover:bg-[#1EBE5D] text-white text-xs font-bold tracking-wide transition-all shadow-sm"
+                    >
+                      <span>💬 Send on WhatsApp</span>
+                    </a>
+
+                    <a
+                      href={mailLinks.mailtoUrl}
+                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-3 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-semibold tracking-wide transition-all border border-slate-200"
+                    >
+                      <span>Default Email App</span>
+                    </a>
+                  </div>
+
+                  <div className="pt-3 border-t border-slate-100">
+                    <button
+                      type="button"
+                      onClick={() => setSubmitted(false)}
+                      className="text-xs font-semibold text-slate-600 hover:text-slate-900 underline"
+                    >
+                      ← Edit or Send Another Inquiry
+                    </button>
+                  </div>
                 </motion.div>
               ) : (
                 <motion.form
@@ -226,9 +306,10 @@ export default function Contact() {
                     whileHover={{ scale: 1.01 }}
                     whileTap={{ scale: 0.99 }}
                     type="submit"
-                    className="w-full py-3.5 text-xs font-semibold uppercase tracking-[0.08em] text-slate-950 bg-brand-yellow hover:bg-brand-yellow-hover rounded-full shadow-sm transition-all duration-200"
+                    className="w-full py-3.5 text-xs font-semibold uppercase tracking-[0.08em] text-slate-950 bg-brand-yellow hover:bg-brand-yellow-hover rounded-full shadow-sm transition-all duration-200 flex items-center justify-center gap-2"
                   >
-                    Submit Quote Request
+                    <span>Submit Quote Request to Gmail</span>
+                    <span>→</span>
                   </motion.button>
                 </motion.form>
               )}

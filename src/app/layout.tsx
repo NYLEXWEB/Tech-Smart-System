@@ -129,8 +129,14 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: "/favicon.ico",
-    apple: "/logo.png",
+    icon: [
+      { url: "/title-icon.png", type: "image/png" },
+      { url: "/favicon.ico" },
+    ],
+    shortcut: ["/title-icon.png"],
+    apple: [
+      { url: "/title-icon.png", type: "image/png" },
+    ],
   },
 };
 
@@ -155,6 +161,9 @@ export default function RootLayout({
       className={`${inter.variable} ${caveat.variable} ${lora.variable} ${dmSans.variable} font-sans`}
     >
       <head>
+        <link rel="icon" type="image/png" href="/title-icon.png" />
+        <link rel="apple-touch-icon" href="/title-icon.png" />
+        <link rel="shortcut icon" href="/title-icon.png" />
         <SchemaOrg schema={organizationSchema} />
         <SchemaOrg schema={webSiteSchema} />
         <SchemaOrg schema={localBusinessSchema} />

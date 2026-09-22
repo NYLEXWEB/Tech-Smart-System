@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -32,43 +33,49 @@ export default function Hero() {
       <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 w-full md:my-auto md:py-0">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
 
-          {/* Main Copy & CTAs (Shifted right on desktop to clear left camera) */}
+          {/* Main Copy & CTAs */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="lg:col-span-8 xl:col-span-8 md:pl-24 lg:pl-36 xl:pl-44 space-y-3 xs:space-y-3.5 sm:space-y-5 lg:space-y-6 text-left max-w-full sm:max-w-2xl lg:max-w-3xl"
+            className="lg:col-span-8 xl:col-span-8 md:pl-10 lg:pl-16 xl:pl-24 space-y-4 sm:space-y-5 lg:space-y-6 text-left max-w-full sm:max-w-2xl lg:max-w-3xl"
           >
-            {/* Tagline / Eyebrow Badge */}
-            <div className="flex items-center gap-2.5">
-              <span className="w-7 sm:w-8 h-1 bg-[#F5A800] rounded-full flex-shrink-0" />
-              <span className="text-[10px] xs:text-[11px] sm:text-xs font-mono font-bold tracking-[0.18em] sm:tracking-[0.2em] text-slate-600 uppercase">
-                SECURITY SYSTEMS • KOLLAM, KERALA
-              </span>
+            {/* Prominent Extra Large Hero Brand Logo */}
+            <div className="relative -ml-2.5 sm:-ml-3.5 pt-1 pb-1">
+              <div className="relative h-20 xs:h-24 sm:h-28 md:h-36 lg:h-40 xl:h-44 w-auto aspect-[430/154]">
+                <Image
+                  src="/logo-bg.png"
+                  alt="TechSmart Systems Logo"
+                  fill
+                  priority
+                  className="object-contain object-left drop-shadow-xs"
+                  sizes="(max-width: 640px) 340px, (max-width: 1024px) 460px, 560px"
+                />
+              </div>
             </div>
 
-            {/* Headline H1 (Slim DM Sans Font with strict 1-line per segment) */}
-            <h1 className="font-dmsans text-[28px] xs:text-[32px] sm:text-4xl md:text-5xl lg:text-[54px] xl:text-[62px] font-medium text-slate-950 tracking-tight leading-[1.16] sm:leading-[1.12]">
+            {/* Headline H1 */}
+            <h1 className="font-dmsans text-[23px] xs:text-[27px] sm:text-3xl md:text-4xl lg:text-[44px] xl:text-[50px] font-semibold text-slate-950 tracking-tight leading-[1.16] sm:leading-[1.12]">
               <span className="block">Complete</span>
-              <span className="block whitespace-nowrap text-[#F5A800]">CCTV Solutions</span>
+              <span className="block whitespace-nowrap text-[#F5A800] drop-shadow-xs">CCTV Solutions</span>
               <span className="block whitespace-nowrap">in Kollam, Kerala</span>
             </h1>
 
             {/* Narrative Subtitle */}
-            <p className="text-[12px] xs:text-[13px] sm:text-base text-slate-600 font-normal leading-relaxed max-w-[290px] xs:max-w-[320px] sm:max-w-lg">
+            <p className="text-[13px] xs:text-[14px] sm:text-base text-slate-600 font-normal leading-relaxed max-w-[300px] xs:max-w-[350px] sm:max-w-xl">
               TechSmart Systems engineers dependable CCTV surveillance, biometric access control, and smart automation for homes and businesses across all Kerala districts since 1999.
             </p>
 
-            {/* CTA Button Stack (Shifted right on mobile to clear left camera) */}
-            <div className="pt-1 sm:pt-2 flex flex-col sm:flex-row items-start sm:items-center gap-2.5 sm:gap-4 w-full pl-7 xs:pl-9 sm:pl-0 md:pl-1 lg:pl-2">
+            {/* CTA Button Stack (Perfect Auto-Width Alignment & Clean Padding) */}
+            <div className="pt-2 flex flex-wrap items-center gap-3.5 sm:gap-5 w-full">
 
               {/* Primary Yellow CTA Button */}
               <Link
                 href="/contact"
-                className="w-[230px] xs:w-[245px] sm:w-auto inline-flex items-center justify-between sm:justify-center gap-3 px-5 py-3 rounded-full bg-[#F5A800] hover:bg-[#DF9800] active:scale-[0.98] text-slate-950 font-extrabold text-xs sm:text-sm uppercase tracking-wider shadow-sm transition-all group cursor-pointer"
+                className="inline-flex items-center justify-center gap-3 px-7 py-3.5 rounded-full bg-[#F5A800] hover:bg-[#E09900] active:scale-[0.98] text-slate-950 font-extrabold text-xs sm:text-sm uppercase tracking-wider shadow-md hover:shadow-lg transition-all group cursor-pointer border border-[#E59800]/40 whitespace-nowrap"
               >
-                <span>GET A QUOTE</span>
-                <div className="w-6 h-6 rounded-full bg-slate-950 text-white flex items-center justify-center font-bold text-xs transform group-hover:translate-x-0.5 transition-transform">
+                <span className="whitespace-nowrap">GET A QUOTE</span>
+                <div className="w-7 h-7 rounded-full bg-slate-950 text-white flex items-center justify-center font-bold text-xs shrink-0 transform group-hover:translate-x-0.5 transition-transform">
                   →
                 </div>
               </Link>
@@ -77,14 +84,14 @@ export default function Hero() {
               <button
                 onClick={() => setIsVideoOpen(true)}
                 aria-label="Watch TechSmart Systems Video Overview"
-                className="w-[200px] xs:w-[215px] sm:w-auto inline-flex items-center justify-start gap-3 px-4.5 py-2.5 rounded-full bg-[#F1F5F9]/90 sm:bg-white/95 backdrop-blur-md border border-slate-200/60 shadow-xs hover:shadow-sm active:scale-[0.98] text-slate-900 font-bold text-xs sm:text-sm transition-all cursor-pointer group"
+                className="inline-flex items-center justify-center gap-3 px-6 py-3.5 rounded-full bg-white hover:bg-slate-50 active:scale-[0.98] text-slate-950 font-bold text-xs sm:text-sm transition-all cursor-pointer border border-slate-300 shadow-sm hover:shadow-md group whitespace-nowrap"
               >
-                <div className="w-6 h-6 rounded-full bg-slate-950 text-white flex items-center justify-center shadow-xs group-hover:scale-105 transition-transform">
+                <div className="w-7 h-7 rounded-full bg-slate-950 text-white flex items-center justify-center shadow-xs shrink-0 group-hover:scale-105 transition-transform">
                   <svg className="w-2.5 h-2.5 fill-current ml-0.5" viewBox="0 0 24 24">
                     <polygon points="5,3 19,12 5,21" />
                   </svg>
                 </div>
-                <span>Watch Video</span>
+                <span className="whitespace-nowrap">Watch Video</span>
               </button>
 
             </div>

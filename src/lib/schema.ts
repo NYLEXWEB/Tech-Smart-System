@@ -11,7 +11,7 @@ export function getOrganizationSchema() {
     name: SITE_CONFIG.name,
     legalName: SITE_CONFIG.legalName,
     url: SITE_CONFIG.url,
-    logo: `${SITE_CONFIG.url}/logo.png`,
+    logo: `${SITE_CONFIG.url}/logo-bg.png`,
     foundingDate: `${SITE_CONFIG.foundingYear}`,
     description:
       "Professional provider of CCTV surveillance, security systems, biometric access control, and smart home automation solutions in Kollam, Kerala since 1999.",
@@ -75,7 +75,7 @@ export function getLocalBusinessSchema() {
     name: SITE_CONFIG.name,
     legalName: SITE_CONFIG.legalName,
     url: SITE_CONFIG.url,
-    logo: `${SITE_CONFIG.url}/logo.png`,
+    logo: `${SITE_CONFIG.url}/logo-bg.png`,
     image: `${SITE_CONFIG.url}/images/techsmart-systems-cctv-security-kollam-hero.png`,
     description:
       "Serving customers since 1999 in Kollam, Kerala. Professional provider of CCTV surveillance, security systems, DVR/NVR storage, biometric access control, and smart home automation.",

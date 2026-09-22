@@ -42,16 +42,16 @@ export default function Navbar() {
       <header
         className={`fixed left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
-            ? "top-2 sm:top-3.5 max-w-6xl mx-3 sm:mx-auto rounded-2xl sm:rounded-full bg-white/95 backdrop-blur-md shadow-md border border-slate-200/90 py-1.5 sm:py-2 px-3.5 sm:px-6"
+            ? "top-1.5 sm:top-2.5 max-w-6xl mx-3 sm:mx-auto rounded-2xl sm:rounded-full bg-white/95 backdrop-blur-md shadow-md border border-slate-200/90 py-1 px-3.5 sm:px-6"
             : mobileMenuOpen
-            ? "top-0 bg-white shadow-md py-2.5 px-4 sm:px-8 border-b border-slate-200"
-            : "top-0 bg-transparent py-2.5 sm:py-4 px-4 sm:px-8 border-transparent"
+            ? "top-0 bg-white shadow-md py-1.5 px-4 sm:px-8 border-b border-slate-200"
+            : "top-0 bg-transparent py-1.5 sm:py-2 px-4 sm:px-8 border-transparent"
         }`}
       >
         <div className={`${isScrolled ? "w-full" : "max-w-7xl mx-auto"} flex items-center justify-between`}>
           {/* Logo */}
           <Link href="/" className="flex items-center" onClick={() => setMobileMenuOpen(false)}>
-            <Logo variant="dark" size="md" />
+            <Logo variant="dark" size="lg" />
           </Link>
 
           {/* Center Desktop Navigation */}

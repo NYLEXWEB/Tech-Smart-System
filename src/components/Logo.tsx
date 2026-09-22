@@ -17,10 +17,10 @@ export default function Logo({
 
   const heightClass =
     size === "sm"
-      ? "h-[36px] sm:h-[40px]"
+      ? "h-[38px] sm:h-[44px]"
       : size === "lg"
-        ? "h-[54px] xs:h-[62px] sm:h-[68px] md:h-[76px]"
-        : "h-[44px] xs:h-[48px] sm:h-[52px] md:h-[56px]";
+        ? "h-[58px] xs:h-[66px] sm:h-[74px] md:h-[84px]"
+        : "h-[46px] xs:h-[52px] sm:h-[58px] md:h-[64px]";
 
   return (
     <div className={`relative flex items-center select-none ${className}`}>
@@ -30,8 +30,8 @@ export default function Logo({
           alt="TechSmart Systems - CCTV & Security Solutions Kollam Kerala"
           fill
           priority
-          className="object-contain object-left"
-          sizes="(max-width: 640px) 180px, (max-width: 1024px) 220px, 260px"
+          className="object-contain object-left scale-105 origin-left"
+          sizes="(max-width: 640px) 200px, (max-width: 1024px) 260px, 320px"
         />
       </div>
     </div>

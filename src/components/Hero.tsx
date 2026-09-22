@@ -9,7 +9,7 @@ export default function Hero() {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
 
   return (
-    <section className="relative min-h-[100dvh] md:h-screen md:min-h-0 flex flex-col justify-start md:justify-center overflow-hidden bg-white w-full max-w-full pt-[215px] xs:pt-[230px] sm:pt-[245px] md:pt-0 pb-12 sm:pb-8 text-[#111827] select-none">
+    <section className="relative min-h-[100dvh] md:h-screen md:min-h-0 flex flex-col justify-start md:justify-center overflow-hidden bg-white w-full max-w-full pt-[130px] xs:pt-[145px] sm:pt-[160px] md:pt-0 pb-12 sm:pb-8 text-[#111827] select-none">
 
       {/* Mobile View: Vertical Hero Background */}
       <div
@@ -38,7 +38,7 @@ export default function Hero() {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="lg:col-span-8 xl:col-span-8 md:pl-10 lg:pl-16 xl:pl-24 space-y-4 sm:space-y-5 lg:space-y-6 text-left max-w-full sm:max-w-2xl lg:max-w-3xl"
+            className="lg:col-span-8 xl:col-span-8 pl-14 xs:pl-18 sm:pl-8 md:pl-10 lg:pl-16 xl:pl-24 space-y-4 sm:space-y-5 lg:space-y-6 text-left max-w-full sm:max-w-2xl lg:max-w-3xl"
           >
             {/* Prominent Extra Large Hero Brand Logo */}
             <div className="relative -ml-2.5 sm:-ml-3.5 pt-1 pb-1">
@@ -66,8 +66,8 @@ export default function Hero() {
               TechSmart Systems engineers dependable CCTV surveillance, biometric access control, and smart automation for homes and businesses across all Kerala districts since 1999.
             </p>
 
-            {/* CTA Button Stack (Perfect Auto-Width Alignment & Clean Padding) */}
-            <div className="pt-2 flex flex-wrap items-center gap-3.5 sm:gap-5 w-full">
+            {/* CTA Button Stack (Shifted right on mobile to clear camera lens) */}
+            <div className="pt-2 flex flex-wrap items-center gap-3.5 sm:gap-5 w-full pl-12 xs:pl-16 sm:pl-0">
 
               {/* Primary Yellow CTA Button */}
               <Link
